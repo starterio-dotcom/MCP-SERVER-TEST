@@ -1,0 +1,454 @@
+// ================================
+// DÁP Design System - Color Tokens (SCSS)
+// Automatikusan generálva a Figma design rendszerből
+// ================================
+
+// Text Colors
+$text-neutral-inverted: #ffffff;
+$text-neutral-strong: #1c1f26;
+$text-neutral-subtle: #606b7a;
+$text-neutral-on-inverted: #ffffff;
+
+// Background Colors
+$background-brand-base-inverted: #4258ed;
+$background-neutral-strong: #e9edf2;
+
+// Semantic Green
+$semantic-green-100: #f0fff8;
+$semantic-green-200: #e5fff3;
+$semantic-green-300: #dbffef;
+$semantic-green-400: #22f18f;
+$semantic-green-500: #00dd72;
+$semantic-green-600: #00d164;
+$semantic-green-700: #00bf53;
+$semantic-green-800: #009b37;
+$semantic-green-900: #00872a;
+$semantic-green-1000: #007b24;
+$semantic-green-1100: #005012;
+$semantic-green-1200: #00430d;
+$semantic-green-1300: #00390a;
+$semantic-green-1400: #003408;
+$semantic-green-1500: #002f07;
+$semantic-green-1600: #002d06;
+$semantic-green-1700: #002905;
+$semantic-green-1800: #002304;
+$semantic-green-1900: #002103;
+$semantic-green-2000: #001a02;
+
+// Semantic Green Alpha
+$semantic-green-alpha-5: #007b240d;
+$semantic-green-alpha-10: #007b241a;
+$semantic-green-alpha-20: #007b2433;
+$semantic-green-alpha-30: #007b244d;
+$semantic-green-alpha-40: #007b2466;
+$semantic-green-alpha-50: #007b2480;
+$semantic-green-alpha-60: #007b2499;
+$semantic-green-alpha-70: #007b24b2;
+$semantic-green-alpha-80: #007b24cc;
+$semantic-green-alpha-90: #007b24e5;
+$semantic-green-alpha-100: #007b24;
+
+// Semantic Blue
+$semantic-blue-100: #f0f8fe;
+$semantic-blue-200: #e8f4fd;
+$semantic-blue-300: #dceffd;
+$semantic-blue-400: #acdafc;
+$semantic-blue-500: #86c9f7;
+$semantic-blue-600: #70bef3;
+$semantic-blue-700: #51aeeb;
+$semantic-blue-800: #068ed0;
+$semantic-blue-900: #007ab9;
+$semantic-blue-1000: #006faa;
+$semantic-blue-1100: #004773;
+$semantic-blue-1200: #003b62;
+$semantic-blue-1300: #003255;
+$semantic-blue-1400: #002e4e;
+$semantic-blue-1500: #002a48;
+$semantic-blue-1600: #002844;
+$semantic-blue-1700: #00233e;
+$semantic-blue-1800: #001e36;
+$semantic-blue-1900: #001c33;
+$semantic-blue-2000: #00162a;
+
+// Semantic Blue Alpha
+$semantic-blue-alpha-5: #006faa0d;
+$semantic-blue-alpha-10: #006faa1a;
+$semantic-blue-alpha-20: #006faa33;
+$semantic-blue-alpha-30: #006faa4d;
+$semantic-blue-alpha-40: #006faa66;
+$semantic-blue-alpha-50: #006faa80;
+$semantic-blue-alpha-60: #006faa99;
+$semantic-blue-alpha-70: #006faab2;
+$semantic-blue-alpha-80: #006faacc;
+$semantic-blue-alpha-90: #006faae5;
+$semantic-blue-alpha-100: #006faa;
+
+// Semantic Orange
+$semantic-orange-100: #fff6ec;
+$semantic-orange-200: #fff4e5;
+$semantic-orange-300: #ffefdb;
+$semantic-orange-400: #ffca89;
+$semantic-orange-500: #ffb156;
+$semantic-orange-600: #ffa034;
+$semantic-orange-700: #f98900;
+$semantic-orange-800: #d06b00;
+$semantic-orange-900: #b65b00;
+$semantic-orange-1000: #a65200;
+$semantic-orange-1100: #6f3300;
+$semantic-orange-1200: #5e2a00;
+$semantic-orange-1300: #512300;
+$semantic-orange-1400: #4a2000;
+$semantic-orange-1500: #441d00;
+$semantic-orange-1600: #411b00;
+$semantic-orange-1700: #3b1800;
+$semantic-orange-1800: #341400;
+$semantic-orange-1900: #301300;
+$semantic-orange-2000: #270e00;
+
+// Semantic Orange Alpha
+$semantic-orange-alpha-5: #a652000d;
+$semantic-orange-alpha-10: #a652001a;
+$semantic-orange-alpha-20: #a6520033;
+$semantic-orange-alpha-30: #a652004d;
+$semantic-orange-alpha-40: #a6520066;
+$semantic-orange-alpha-50: #a6520080;
+$semantic-orange-alpha-60: #a6520099;
+$semantic-orange-alpha-70: #a65200b2;
+$semantic-orange-alpha-80: #a65200cc;
+$semantic-orange-alpha-90: #a65200e5;
+$semantic-orange-alpha-100: #a65200;
+
+// Semantic Red
+$semantic-red-100: #fff5f2;
+$semantic-red-200: #ffede9;
+$semantic-red-300: #ffe6df;
+$semantic-red-400: #ffc6b8;
+$semantic-red-500: #ffad99;
+$semantic-red-600: #ff9c86;
+$semantic-red-700: #ff8169;
+$semantic-red-800: #f84227;
+$semantic-red-900: #e32100;
+$semantic-red-1000: #d40d00;
+$semantic-red-1100: #8e0000;
+$semantic-red-1200: #790000;
+$semantic-red-1300: #680000;
+$semantic-red-1400: #600000;
+$semantic-red-1500: #590000;
+$semantic-red-1600: #550000;
+$semantic-red-1700: #4d0000;
+$semantic-red-1800: #440000;
+$semantic-red-1900: #400000;
+$semantic-red-2000: #340000;
+
+// Semantic Red Alpha
+$semantic-red-alpha-5: #d40d000d;
+$semantic-red-alpha-10: #d40d001a;
+$semantic-red-alpha-20: #d40d0033;
+$semantic-red-alpha-30: #d40d004d;
+$semantic-red-alpha-40: #d40d0066;
+$semantic-red-alpha-50: #d40d0080;
+$semantic-red-alpha-60: #d40d0099;
+$semantic-red-alpha-70: #d40d00b2;
+$semantic-red-alpha-80: #d40d00cc;
+$semantic-red-alpha-90: #d40d00e5;
+$semantic-red-alpha-100: #d40d00;
+
+// Cold Grey
+$cold-grey-100: #f5f7fa;
+$cold-grey-200: #eef2f6;
+$cold-grey-300: #e9edf2;
+$cold-grey-400: #d1d7df;
+$cold-grey-500: #bfc6d1;
+$cold-grey-600: #b2b9c6;
+$cold-grey-700: #a3abba;
+$cold-grey-800: #7e8797;
+$cold-grey-900: #707a8a;
+$cold-grey-1000: #606b7a;
+$cold-grey-1100: #404753;
+$cold-grey-1200: #353b46;
+$cold-grey-1300: #2b3039;
+$cold-grey-1400: #282c35;
+$cold-grey-1500: #242830;
+$cold-grey-1600: #20242c;
+$cold-grey-1700: #1c1f26;
+$cold-grey-1800: #181b22;
+$cold-grey-1900: #15181f;
+$cold-grey-2000: #0f1115;
+
+// Cold Grey Alpha
+$cold-grey-alpha-5: #606b7a0d;
+$cold-grey-alpha-10: #606b7a1a;
+$cold-grey-alpha-20: #606b7a33;
+$cold-grey-alpha-30: #606b7a4d;
+$cold-grey-alpha-40: #606b7a66;
+$cold-grey-alpha-50: #606b7a80;
+$cold-grey-alpha-60: #606b7a99;
+$cold-grey-alpha-70: #606b7ab2;
+$cold-grey-alpha-80: #606b7acc;
+$cold-grey-alpha-90: #606b7ae5;
+$cold-grey-alpha-100: #606b7a;
+
+// Teal
+$teal-100: #f2fcfa;
+$teal-200: #eafbf7;
+$teal-300: #e2f8f4;
+$teal-400: #86e5d1;
+$teal-500: #47d7b9;
+$teal-600: #23cca9;
+$teal-700: #1cba9d;
+$teal-800: #0f9786;
+$teal-900: #078279;
+$teal-1000: #027671;
+$teal-1100: #094d3f;
+$teal-1200: #084135;
+$teal-1300: #07372c;
+$teal-1400: #063229;
+$teal-1500: #052e25;
+$teal-1600: #052b23;
+$teal-1700: #052720;
+$teal-1800: #04211b;
+$teal-1900: #041f19;
+$teal-2000: #031814;
+
+// Teal Alpha
+$teal-alpha-5: #0276710d;
+$teal-alpha-10: #0276711a;
+$teal-alpha-20: #02767133;
+$teal-alpha-30: #0276714d;
+$teal-alpha-40: #02767166;
+$teal-alpha-50: #02767180;
+$teal-alpha-60: #02767199;
+$teal-alpha-70: #027671b2;
+$teal-alpha-80: #027671cc;
+$teal-alpha-90: #027671e5;
+$teal-alpha-100: #027671;
+
+// Azure
+$azure-100: #f1fdfe;
+$azure-200: #e7fbfd;
+$azure-300: #def9fd;
+$azure-400: #63e5f4;
+$azure-500: #17d4eb;
+$azure-600: #14c8e1;
+$azure-700: #10b5d3;
+$azure-800: #0892b7;
+$azure-900: #047da7;
+$azure-1000: #01719d;
+$azure-1100: #014966;
+$azure-1200: #013d55;
+$azure-1300: #003449;
+$azure-1400: #003043;
+$azure-1500: #002b3c;
+$azure-1600: #00293a;
+$azure-1700: #002534;
+$azure-1800: #00202d;
+$azure-1900: #001e2a;
+$azure-2000: #001721;
+
+// Azure Alpha
+$azure-alpha-5: #01719d0d;
+$azure-alpha-10: #01719d1a;
+$azure-alpha-20: #01719d33;
+$azure-alpha-30: #01719d4d;
+$azure-alpha-40: #01719d66;
+$azure-alpha-50: #01719d80;
+$azure-alpha-60: #01719d99;
+$azure-alpha-70: #01719db2;
+$azure-alpha-80: #01719dcc;
+$azure-alpha-90: #01719de5;
+$azure-alpha-100: #01719d;
+
+// Indigo
+$indigo-100: #f4f8ff;
+$indigo-200: #ecf3ff;
+$indigo-300: #e3ecff;
+$indigo-400: #c4d3ff;
+$indigo-500: #aebfff;
+$indigo-600: #a2b1ff;
+$indigo-700: #929eff;
+$indigo-800: #647aff;
+$indigo-900: #4964fb;
+$indigo-1000: #4258ed;
+$indigo-1100: #3130ab;
+$indigo-1200: #2b2695;
+$indigo-1300: #261d84;
+$indigo-1400: #23197b;
+$indigo-1500: #201673;
+$indigo-1600: #1f146f;
+$indigo-1700: #1c1066;
+$indigo-1800: #180c5b;
+$indigo-1900: #160b56;
+$indigo-2000: #110749;
+
+// Indigo Alpha
+$indigo-alpha-5: #4258ed0d;
+$indigo-alpha-10: #4258ed1a;
+$indigo-alpha-20: #4258ed33;
+$indigo-alpha-30: #4258ed4d;
+$indigo-alpha-40: #4258ed66;
+$indigo-alpha-50: #4258ed80;
+$indigo-alpha-60: #4258ed99;
+$indigo-alpha-70: #4258edb2;
+$indigo-alpha-80: #4258edcc;
+$indigo-alpha-90: #4258ede5;
+$indigo-alpha-100: #4258ed;
+
+// Violet
+$violet-100: #f8f5ff;
+$violet-200: #f4efff;
+$violet-300: #efe7ff;
+$violet-400: #decaff;
+$violet-500: #d0b3ff;
+$violet-600: #c9a5ff;
+$violet-700: #bc90ff;
+$violet-800: #a065fb;
+$violet-900: #8f50e8;
+$violet-1000: #8445db;
+$violet-1100: #59249b;
+$violet-1200: #4c1c86;
+$violet-1300: #411674;
+$violet-1400: #3c136c;
+$violet-1500: #371163;
+$violet-1600: #34105f;
+$violet-1700: #2f0d57;
+$violet-1800: #290a4d;
+$violet-1900: #260949;
+$violet-2000: #1f063c;
+
+// Violet Alpha
+$violet-alpha-5: #8445db0d;
+$violet-alpha-10: #8445db1a;
+$violet-alpha-20: #8445db33;
+$violet-alpha-30: #8445db4d;
+$violet-alpha-40: #8445db66;
+$violet-alpha-50: #8445db80;
+$violet-alpha-60: #8445db99;
+$violet-alpha-70: #8445dbb2;
+$violet-alpha-80: #8445dbcc;
+$violet-alpha-90: #8445dbe5;
+$violet-alpha-100: #8445db;
+
+// Black
+$black-5: #0000000d;
+$black-10: #0000001a;
+$black-20: #00000033;
+$black-30: #0000004d;
+$black-40: #00000066;
+$black-50: #00000080;
+$black-60: #00000099;
+$black-70: #000000b2;
+$black-80: #000000cc;
+$black-90: #000000e5;
+$black-100: #000000;
+
+// White
+$white-5: #ffffff0d;
+$white-10: #ffffff1a;
+$white-20: #ffffff33;
+$white-30: #ffffff4d;
+$white-40: #ffffff66;
+$white-50: #ffffff80;
+$white-60: #ffffff99;
+$white-70: #ffffffb2;
+$white-80: #ffffffcc;
+$white-90: #ffffffe5;
+$white-100: #ffffff;
+
+// Neutral
+$neutral-1600: #20242c;
+
+// ================================
+// MIXINS for common color usages
+// ================================
+
+// Text Colors
+@mixin text-inverted {
+  color: $text-neutral-inverted;
+}
+
+@mixin text-strong {
+  color: $text-neutral-strong;
+}
+
+@mixin text-subtle {
+  color: $text-neutral-subtle;
+}
+
+// Success States
+@mixin success-bg {
+  background-color: $semantic-green-100;
+}
+
+@mixin success-text {
+  color: $semantic-green-700;
+}
+
+@mixin success-border {
+  border-color: $semantic-green-500;
+}
+
+// Info States
+@mixin info-bg {
+  background-color: $semantic-blue-100;
+}
+
+@mixin info-text {
+  color: $semantic-blue-700;
+}
+
+@mixin info-border {
+  border-color: $semantic-blue-500;
+}
+
+// Warning States
+@mixin warning-bg {
+  background-color: $semantic-orange-100;
+}
+
+@mixin warning-text {
+  color: $semantic-orange-700;
+}
+
+@mixin warning-border {
+  border-color: $semantic-orange-500;
+}
+
+// Error States
+@mixin error-bg {
+  background-color: $semantic-red-100;
+}
+
+@mixin error-text {
+  color: $semantic-red-700;
+}
+
+@mixin error-border {
+  border-color: $semantic-red-500;
+}
+
+// Background Gradients
+@mixin gradient-primary {
+  background: linear-gradient(135deg, $indigo-600 0%, $violet-600 100%);
+}
+
+@mixin gradient-success {
+  background: linear-gradient(135deg, $semantic-green-500 0%, $teal-500 100%);
+}
+
+// Usage Examples:
+/*
+.button-primary {
+  background-color: $indigo-1000;
+  color: $white-100;
+  
+  &:hover {
+    background-color: $indigo-900;
+  }
+}
+
+.alert-success {
+  @include success-bg;
+  @include success-text;
+  @include success-border;
+}
+*/

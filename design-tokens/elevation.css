@@ -1,0 +1,172 @@
+/* ================================
+   DÁP Design System - Elevation/Shadow Tokens
+   Automatikusan generálva a Figma design rendszerből
+   ================================ */
+
+:root {
+  /* ============================================
+     POSITIVE ELEVATION (Upward shadows)
+     ============================================ */
+  
+  /* Elevation 100 - Minimal elevation (subtle) */
+  --elevation-100: 0px 1px 2px 0px rgba(0, 0, 0, 0.08);
+  
+  /* Elevation 200 - Low elevation (cards, panels) */
+  --elevation-200: 0px 1px 2px 0px rgba(0, 0, 0, 0.04), 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
+  
+  /* Elevation 300 - Medium elevation (dropdowns, popovers) */
+  --elevation-300: 0px 4px 6px -1px rgba(0, 0, 0, 0.08), 0px 2px 4px -1px rgba(0, 0, 0, 0.06);
+  
+  /* Elevation 400 - High elevation (modals, dialogs) */
+  --elevation-400: 0px 8px 12px -2px rgba(0, 0, 0, 0.08), 0px 2px 6px -2px rgba(0, 0, 0, 0.06);
+  
+  /* Elevation 500 - Higher elevation (overlays) */
+  --elevation-500: 0px 16px 24px -4px rgba(0, 0, 0, 0.08), 0px 4px 8px -2px rgba(0, 0, 0, 0.04);
+  
+  /* Elevation 600 - Highest elevation (major overlays) */
+  --elevation-600: 0px 24px 40px -4px rgba(0, 0, 0, 0.08), 0px 6px 16px -2px rgba(0, 0, 0, 0.04);
+  
+  /* ============================================
+     NEGATIVE ELEVATION (Downward shadows)
+     ============================================ */
+  
+  /* Elevation -100 - Minimal inset (subtle) */
+  --elevation-n100: 0px -1px 2px 0px rgba(0, 0, 0, 0.08);
+  
+  /* Elevation -200 - Low inset */
+  --elevation-n200: 0px -1px 2px 0px rgba(0, 0, 0, 0.04), 0px -1px 3px 0px rgba(0, 0, 0, 0.08);
+  
+  /* Elevation -300 - Medium inset */
+  --elevation-n300: 0px -4px 6px -1px rgba(0, 0, 0, 0.08), 0px -2px 4px -1px rgba(0, 0, 0, 0.06);
+  
+  /* Elevation -400 - High inset */
+  --elevation-n400: 0px -8px 12px -2px rgba(0, 0, 0, 0.08), 0px -2px 6px -2px rgba(0, 0, 0, 0.06);
+  
+  /* Elevation -500 - Higher inset */
+  --elevation-n500: 0px -4px 8px -2px rgba(0, 0, 0, 0.04), 0px -16px 24px -4px rgba(0, 0, 0, 0.08);
+  
+  /* Elevation -600 - Highest inset */
+  --elevation-n600: 0px -6px 16px -2px rgba(0, 0, 0, 0.04), 0px -24px 40px -4px rgba(0, 0, 0, 0.08);
+  
+  /* ============================================
+     SEMANTIC ALIASES
+     ============================================ */
+  
+  /* No shadow */
+  --shadow-none: none;
+  
+  /* Positive shadows */
+  --shadow-sm: var(--elevation-100);
+  --shadow-md: var(--elevation-200);
+  --shadow-lg: var(--elevation-300);
+  --shadow-xl: var(--elevation-400);
+  --shadow-2xl: var(--elevation-500);
+  --shadow-3xl: var(--elevation-600);
+  
+  /* Negative shadows (inset style) */
+  --shadow-inset-sm: var(--elevation-n100);
+  --shadow-inset-md: var(--elevation-n200);
+  --shadow-inset-lg: var(--elevation-n300);
+  --shadow-inset-xl: var(--elevation-n400);
+  --shadow-inset-2xl: var(--elevation-n500);
+  --shadow-inset-3xl: var(--elevation-n600);
+}
+
+/* ================================
+   UTILITY CLASSES
+   ================================ */
+
+/* Positive Elevation */
+.elevation-none { box-shadow: none; }
+.elevation-100 { box-shadow: var(--elevation-100); }
+.elevation-200 { box-shadow: var(--elevation-200); }
+.elevation-300 { box-shadow: var(--elevation-300); }
+.elevation-400 { box-shadow: var(--elevation-400); }
+.elevation-500 { box-shadow: var(--elevation-500); }
+.elevation-600 { box-shadow: var(--elevation-600); }
+
+/* Negative Elevation */
+.elevation-n100 { box-shadow: var(--elevation-n100); }
+.elevation-n200 { box-shadow: var(--elevation-n200); }
+.elevation-n300 { box-shadow: var(--elevation-n300); }
+.elevation-n400 { box-shadow: var(--elevation-n400); }
+.elevation-n500 { box-shadow: var(--elevation-n500); }
+.elevation-n600 { box-shadow: var(--elevation-n600); }
+
+/* Semantic Aliases */
+.shadow-none { box-shadow: var(--shadow-none); }
+.shadow-sm { box-shadow: var(--shadow-sm); }
+.shadow-md { box-shadow: var(--shadow-md); }
+.shadow-lg { box-shadow: var(--shadow-lg); }
+.shadow-xl { box-shadow: var(--shadow-xl); }
+.shadow-2xl { box-shadow: var(--shadow-2xl); }
+.shadow-3xl { box-shadow: var(--shadow-3xl); }
+
+/* Inset shadows */
+.shadow-inset-sm { box-shadow: var(--shadow-inset-sm); }
+.shadow-inset-md { box-shadow: var(--shadow-inset-md); }
+.shadow-inset-lg { box-shadow: var(--shadow-inset-lg); }
+.shadow-inset-xl { box-shadow: var(--shadow-inset-xl); }
+.shadow-inset-2xl { box-shadow: var(--shadow-inset-2xl); }
+.shadow-inset-3xl { box-shadow: var(--shadow-inset-3xl); }
+
+/* ================================
+   COMPONENT-SPECIFIC SHADOWS
+   ================================ */
+
+.card-shadow { box-shadow: var(--elevation-200); }
+.dropdown-shadow { box-shadow: var(--elevation-300); }
+.modal-shadow { box-shadow: var(--elevation-400); }
+.overlay-shadow { box-shadow: var(--elevation-500); }
+.floating-shadow { box-shadow: var(--elevation-600); }
+
+/* ================================
+   FOCUS/INTERACTIVE SHADOWS
+   ================================ */
+
+.focus-ring {
+  box-shadow: 0 0 0 3px rgba(66, 88, 237, 0.3);
+}
+
+.focus-ring-error {
+  box-shadow: 0 0 0 3px rgba(212, 13, 0, 0.3);
+}
+
+.focus-ring-success {
+  box-shadow: 0 0 0 3px rgba(0, 123, 36, 0.3);
+}
+
+.focus-ring-warning {
+  box-shadow: 0 0 0 3px rgba(166, 82, 0, 0.3);
+}
+
+/* Usage Examples:
+   
+   // Card with elevation
+   .card {
+     box-shadow: var(--elevation-200);
+     border-radius: var(--radius-large);
+     padding: var(--spacing-400);
+   }
+   
+   // Dropdown menu
+   .dropdown {
+     box-shadow: var(--elevation-300);
+     border-radius: var(--radius-small);
+   }
+   
+   // Modal dialog
+   .modal {
+     box-shadow: var(--elevation-400);
+   }
+   
+   // Focused button
+   .button:focus {
+     box-shadow: 0 0 0 3px rgba(66, 88, 237, 0.3);
+   }
+   
+   // Sticky header (negative elevation)
+   .sticky-header {
+     box-shadow: var(--elevation-n200);
+   }
+*/

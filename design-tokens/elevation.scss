@@ -1,0 +1,210 @@
+/* ================================
+   DÁP Design System - Elevation/Shadow Tokens
+   Automatikusan generálva a Figma design rendszerből
+   ================================ */
+
+// ============================================
+// POSITIVE ELEVATION (Upward shadows)
+// ============================================
+
+// Elevation 100 - Minimal elevation (subtle)
+$elevation-100: 0px 1px 2px 0px rgba(0, 0, 0, 0.08);
+
+// Elevation 200 - Low elevation (cards, panels)
+$elevation-200: 0px 1px 2px 0px rgba(0, 0, 0, 0.04), 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
+
+// Elevation 300 - Medium elevation (dropdowns, popovers)
+$elevation-300: 0px 4px 6px -1px rgba(0, 0, 0, 0.08), 0px 2px 4px -1px rgba(0, 0, 0, 0.06);
+
+// Elevation 400 - High elevation (modals, dialogs)
+$elevation-400: 0px 8px 12px -2px rgba(0, 0, 0, 0.08), 0px 2px 6px -2px rgba(0, 0, 0, 0.06);
+
+// Elevation 500 - Higher elevation (overlays)
+$elevation-500: 0px 16px 24px -4px rgba(0, 0, 0, 0.08), 0px 4px 8px -2px rgba(0, 0, 0, 0.04);
+
+// Elevation 600 - Highest elevation (major overlays)
+$elevation-600: 0px 24px 40px -4px rgba(0, 0, 0, 0.08), 0px 6px 16px -2px rgba(0, 0, 0, 0.04);
+
+// ============================================
+// NEGATIVE ELEVATION (Downward shadows)
+// ============================================
+
+// Elevation -100 - Minimal inset (subtle)
+$elevation-n100: 0px -1px 2px 0px rgba(0, 0, 0, 0.08);
+
+// Elevation -200 - Low inset
+$elevation-n200: 0px -1px 2px 0px rgba(0, 0, 0, 0.04), 0px -1px 3px 0px rgba(0, 0, 0, 0.08);
+
+// Elevation -300 - Medium inset
+$elevation-n300: 0px -4px 6px -1px rgba(0, 0, 0, 0.08), 0px -2px 4px -1px rgba(0, 0, 0, 0.06);
+
+// Elevation -400 - High inset
+$elevation-n400: 0px -8px 12px -2px rgba(0, 0, 0, 0.08), 0px -2px 6px -2px rgba(0, 0, 0, 0.06);
+
+// Elevation -500 - Higher inset
+$elevation-n500: 0px -4px 8px -2px rgba(0, 0, 0, 0.04), 0px -16px 24px -4px rgba(0, 0, 0, 0.08);
+
+// Elevation -600 - Highest inset
+$elevation-n600: 0px -6px 16px -2px rgba(0, 0, 0, 0.04), 0px -24px 40px -4px rgba(0, 0, 0, 0.08);
+
+// ============================================
+// SEMANTIC ALIASES
+// ============================================
+
+// No shadow
+$shadow-none: none;
+
+// Positive shadows
+$shadow-sm: $elevation-100;
+$shadow-md: $elevation-200;
+$shadow-lg: $elevation-300;
+$shadow-xl: $elevation-400;
+$shadow-2xl: $elevation-500;
+$shadow-3xl: $elevation-600;
+
+// Negative shadows (inset style)
+$shadow-inset-sm: $elevation-n100;
+$shadow-inset-md: $elevation-n200;
+$shadow-inset-lg: $elevation-n300;
+$shadow-inset-xl: $elevation-n400;
+$shadow-inset-2xl: $elevation-n500;
+$shadow-inset-3xl: $elevation-n600;
+
+// ============================================
+// ELEVATION MAP (for loops)
+// ============================================
+
+$elevations: (
+  100: $elevation-100,
+  200: $elevation-200,
+  300: $elevation-300,
+  400: $elevation-400,
+  500: $elevation-500,
+  600: $elevation-600,
+  n100: $elevation-n100,
+  n200: $elevation-n200,
+  n300: $elevation-n300,
+  n400: $elevation-n400,
+  n500: $elevation-n500,
+  n600: $elevation-n600,
+);
+
+$shadows: (
+  none: $shadow-none,
+  sm: $shadow-sm,
+  md: $shadow-md,
+  lg: $shadow-lg,
+  xl: $shadow-xl,
+  '2xl': $shadow-2xl,
+  '3xl': $shadow-3xl,
+  'inset-sm': $shadow-inset-sm,
+  'inset-md': $shadow-inset-md,
+  'inset-lg': $shadow-inset-lg,
+  'inset-xl': $shadow-inset-xl,
+  'inset-2xl': $shadow-inset-2xl,
+  'inset-3xl': $shadow-inset-3xl,
+);
+
+// ============================================
+// MIXINS
+// ============================================
+
+// Apply specific elevation
+@mixin elevation($level) {
+  @if map-has-key($elevations, $level) {
+    box-shadow: map-get($elevations, $level);
+  } @else {
+    @warn "Elevation level `#{$level}` not found in $elevations map.";
+  }
+}
+
+// Apply semantic shadow
+@mixin shadow($size) {
+  @if map-has-key($shadows, $size) {
+    box-shadow: map-get($shadows, $size);
+  } @else {
+    @warn "Shadow size `#{$size}` not found in $shadows map.";
+  }
+}
+
+// Component-specific mixins
+@mixin card-shadow {
+  box-shadow: $elevation-200;
+}
+
+@mixin dropdown-shadow {
+  box-shadow: $elevation-300;
+}
+
+@mixin modal-shadow {
+  box-shadow: $elevation-400;
+}
+
+@mixin overlay-shadow {
+  box-shadow: $elevation-500;
+}
+
+@mixin floating-shadow {
+  box-shadow: $elevation-600;
+}
+
+// Focus ring mixins
+@mixin focus-ring($color: rgba(66, 88, 237, 0.3)) {
+  box-shadow: 0 0 0 3px $color;
+}
+
+@mixin focus-ring-error {
+  @include focus-ring(rgba(212, 13, 0, 0.3));
+}
+
+@mixin focus-ring-success {
+  @include focus-ring(rgba(0, 123, 36, 0.3));
+}
+
+@mixin focus-ring-warning {
+  @include focus-ring(rgba(166, 82, 0, 0.3));
+}
+
+// ============================================
+// USAGE EXAMPLES
+// ============================================
+
+/*
+// Using elevation mixin
+.card {
+  @include elevation(200);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+// Using shadow mixin
+.dropdown {
+  @include shadow(lg);
+  border-radius: 4px;
+}
+
+// Using component-specific mixin
+.modal {
+  @include modal-shadow;
+}
+
+// Using focus ring
+.button:focus {
+  @include focus-ring;
+}
+
+// Custom focus ring color
+.input:focus {
+  @include focus-ring(rgba(0, 123, 36, 0.4));
+}
+
+// Responsive elevation
+.card {
+  @include elevation(200);
+  
+  @media (min-width: 768px) {
+    @include elevation(300);
+  }
+}
+*/
+

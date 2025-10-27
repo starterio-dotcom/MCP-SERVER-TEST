@@ -1,0 +1,397 @@
+/**
+ * Button Styles - DÁP Design System
+ * Auto-generated from Figma design tokens
+ */
+
+/* ============================================
+   BASE BUTTON STYLES
+   ============================================ */
+
+.btn {
+  /* Reset */
+  appearance: none;
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  cursor: pointer;
+  user-select: none;
+  
+  /* Layout */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-100);  /* 4px - kisebb gap az ikon és szöveg között */
+  
+  /* Typography */
+  font-family: var(--family-primary);
+  font-weight: var(--weight-medium);
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+  
+  /* Border */
+  border-radius: var(--radius-base);
+  border-style: solid;
+  border-width: var(--border-width-base);
+  
+  /* Transition */
+  transition: all 0.2s ease;
+  
+  /* Focus */
+  outline: none;
+  position: relative;
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--focus-outer-ring);
+  outline-offset: 2px;
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+/* ============================================
+   BUTTON SIZES
+   ============================================ */
+
+/* Large - 48px */
+.btn-large {
+  height: 48px;
+  padding: 0 var(--spacing-600);
+  font-size: var(--size-lg);  /* 18px */
+  border-radius: var(--radius-rounded);  /* 1000px - fully rounded */
+}
+
+.btn-large.btn-icon-only {
+  width: 48px;
+  padding: 0;
+}
+
+/* Medium - 40px */
+.btn-medium {
+  height: 40px;
+  padding: 0 var(--spacing-400);
+  font-size: var(--size-base);
+  border-radius: var(--radius-rounded);  /* 1000px - fully rounded */
+}
+
+.btn-medium.btn-icon-only {
+  width: 40px;
+  padding: 0;
+}
+
+/* Small - 32px */
+.btn-small {
+  height: 32px;
+  padding: 0 var(--spacing-300);
+  font-size: var(--size-sm);
+  border-radius: var(--radius-rounded);  /* 1000px - fully rounded */
+}
+
+.btn-small.btn-icon-only {
+  width: 32px;
+  padding: 0;
+}
+
+/* X-Small - 24px */
+.btn-xsmall {
+  height: 24px;
+  padding: 0 var(--spacing-200);
+  font-size: var(--size-xs);
+  border-radius: var(--radius-rounded);  /* 1000px - fully rounded */
+}
+
+.btn-xsmall.btn-icon-only {
+  width: 24px;
+  padding: 0;
+}
+
+/* ============================================
+   PRIMARY BUTTON
+   ============================================ */
+
+/* Brand (default) */
+.btn-primary {
+  background-color: var(--button-primary-background-enabled);
+  color: var(--button-primary-text-enabled);
+  border-color: transparent;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: var(--button-primary-background-hover);
+}
+
+.btn-primary:active:not(:disabled) {
+  background-color: var(--button-primary-background-pressed);
+}
+
+.btn-primary:disabled {
+  background-color: var(--button-primary-background-disabled);
+  color: var(--button-primary-text-disabled);
+}
+
+/* Negative (destructive) */
+.btn-primary.btn-negative {
+  background-color: var(--button-primary-background-destructive-enabled);
+}
+
+.btn-primary.btn-negative:hover:not(:disabled) {
+  background-color: var(--button-primary-background-destructive-hover);
+}
+
+.btn-primary.btn-negative:active:not(:disabled) {
+  background-color: var(--button-primary-background-destructive-pressed);
+}
+
+/* Inverted */
+.btn-primary.btn-inverted {
+  background-color: var(--button-primary-background-inverted-enabled);
+  color: var(--button-primary-text-inverted);
+}
+
+.btn-primary.btn-inverted:hover:not(:disabled) {
+  background-color: var(--button-primary-background-inverted-hover);
+}
+
+.btn-primary.btn-inverted:active:not(:disabled) {
+  background-color: var(--button-primary-background-inverted-pressed);
+}
+
+/* ============================================
+   OUTLINE BUTTON
+   ============================================ */
+
+/* Brand (default) */
+.btn-outline {
+  background-color: transparent;
+  color: var(--button-outline-text-enabled);
+  border-color: var(--button-outline-border-enabled);
+}
+
+.btn-outline:hover:not(:disabled) {
+  color: var(--button-outline-text-hover);
+  border-color: var(--button-outline-border-hover);
+}
+
+.btn-outline:active:not(:disabled) {
+  color: var(--button-outline-text-pressed);
+  border-color: var(--button-outline-border-pressed);
+}
+
+.btn-outline:disabled {
+  color: var(--button-outline-text-disabled);
+  border-color: var(--button-outline-border-disabled);
+}
+
+/* Negative (destructive) */
+.btn-outline.btn-negative {
+  color: var(--button-outline-text-destructive-enabled);
+  border-color: var(--button-outline-border-destructive-enabled);
+}
+
+.btn-outline.btn-negative:hover:not(:disabled) {
+  color: var(--button-outline-text-destructive-hover);
+  border-color: var(--button-outline-border-destructive-hover);
+}
+
+.btn-outline.btn-negative:active:not(:disabled) {
+  color: var(--button-outline-text-destructive-pressed);
+  border-color: var(--button-outline-border-destructive-pressed);
+}
+
+/* Inverted */
+.btn-outline.btn-inverted {
+  color: var(--button-outline-text-inverted-enabled);
+  border-color: var(--button-outline-border-inverted-enabled);
+}
+
+.btn-outline.btn-inverted:hover:not(:disabled) {
+  color: var(--button-outline-text-inverted-hover);
+  border-color: var(--button-outline-border-inverted-hover);
+}
+
+.btn-outline.btn-inverted:active:not(:disabled) {
+  color: var(--button-outline-text-inverted-pressed);
+  border-color: var(--button-outline-border-inverted-pressed);
+}
+
+/* ============================================
+   SUBTLE BUTTON
+   ============================================ */
+
+/* Brand (default) */
+.btn-subtle {
+  background-color: var(--button-subtle-background-enabled);
+  color: var(--button-subtle-text-enabled);
+  border-color: var(--button-subtle-border-enabled);
+}
+
+.btn-subtle:hover:not(:disabled) {
+  background-color: var(--button-subtle-background-hover);
+  color: var(--button-subtle-text-hover);
+  border-color: var(--button-subtle-border-hover);
+}
+
+.btn-subtle:active:not(:disabled) {
+  background-color: var(--button-subtle-background-pressed);
+  color: var(--button-subtle-text-pressed);
+  border-color: var(--button-subtle-border-pressed);
+}
+
+.btn-subtle:disabled {
+  background-color: var(--button-subtle-background-disabled);
+  color: var(--button-subtle-text-disabled);
+  border-color: var(--button-subtle-border-disabled);
+}
+
+/* Neutral */
+.btn-subtle.btn-neutral {
+  background-color: var(--button-subtle-background-neutral-enabled);
+  color: var(--button-subtle-text-neutral-enabled);
+  border-color: var(--button-subtle-border-neutral-enabled);
+}
+
+.btn-subtle.btn-neutral:hover:not(:disabled) {
+  background-color: var(--button-subtle-background-neutral-hover);
+  color: var(--button-subtle-text-neutral-hover);
+  border-color: var(--button-subtle-border-neutral-hover);
+}
+
+.btn-subtle.btn-neutral:active:not(:disabled) {
+  background-color: var(--button-subtle-background-neutral-pressed);
+  color: var(--button-subtle-text-neutral-pressed);
+  border-color: var(--button-subtle-border-neutral-pressed);
+}
+
+/* Negative (destructive) */
+.btn-subtle.btn-negative {
+  background-color: var(--button-subtle-background-destructive-enabled);
+  color: var(--button-subtle-text-destructive-enabled);
+  border-color: var(--button-subtle-border-destructive-enabled);
+}
+
+.btn-subtle.btn-negative:hover:not(:disabled) {
+  background-color: var(--button-subtle-background-destructive-hover);
+  color: var(--button-subtle-text-destructive-hover);
+  border-color: var(--button-subtle-border-destructive-hover);
+}
+
+.btn-subtle.btn-negative:active:not(:disabled) {
+  background-color: var(--button-subtle-background-destructive-pressed);
+  color: var(--button-subtle-text-destructive-pressed);
+  border-color: var(--button-subtle-border-destructive-pressed);
+}
+
+/* Inverted */
+.btn-subtle.btn-inverted {
+  background-color: var(--button-subtle-background-inverted-enabled);
+  color: var(--button-subtle-text-inverted);
+  border-color: var(--button-subtle-border-inverted-enabled);
+}
+
+.btn-subtle.btn-inverted:hover:not(:disabled) {
+  background-color: var(--button-subtle-background-inverted-hover);
+  border-color: var(--button-subtle-border-inverted-hover);
+}
+
+.btn-subtle.btn-inverted:active:not(:disabled) {
+  background-color: var(--button-subtle-background-inverted-pressed);
+  border-color: var(--button-subtle-border-inverted-pressed);
+}
+
+/* Quiet variáció - eltávolítja a bordert */
+.btn-subtle.btn-quiet {
+  border-color: transparent;
+}
+
+/* ============================================
+   TOGGLE BUTTON
+   ============================================ */
+
+.btn-toggle {
+  background-color: var(--button-toggle-background-enabled);
+  color: var(--button-toggle-content-enabled);
+  border-color: var(--button-toggle-border-enabled);
+}
+
+.btn-toggle:hover:not(:disabled) {
+  background-color: var(--button-toggle-background-hover);
+  color: var(--button-toggle-content-hover);
+  border-color: var(--button-toggle-border-hover);
+}
+
+.btn-toggle:active:not(:disabled) {
+  background-color: var(--button-toggle-background-pressed);
+  color: var(--button-toggle-content-pressed);
+  border-color: var(--button-toggle-border-pressed);
+}
+
+.btn-toggle:disabled {
+  background-color: var(--button-toggle-background-disabled);
+  color: var(--button-toggle-content-disabled);
+  border-color: var(--button-toggle-border-disabled);
+}
+
+/* Selected state */
+.btn-toggle.btn-selected {
+  background-color: var(--button-toggle-background-selected-enabled);
+  color: var(--button-toggle-content-selected-enabled);
+  border-color: transparent;
+}
+
+.btn-toggle.btn-selected:hover:not(:disabled) {
+  background-color: var(--button-toggle-background-selected-hover);
+  color: var(--button-toggle-content-selected-hover);
+}
+
+.btn-toggle.btn-selected:active:not(:disabled) {
+  background-color: var(--button-toggle-background-selected-pressed);
+  color: var(--button-toggle-content-selected-pressed);
+}
+
+/* ============================================
+   LOADING STATE
+   ============================================ */
+
+.btn-loading {
+  pointer-events: none;
+  position: relative;
+}
+
+.btn-spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ============================================
+   FULL WIDTH
+   ============================================ */
+
+.btn-full-width {
+  width: 100%;
+}
+
+/* ============================================
+   HIGH CONTRAST MODE
+   ============================================ */
+
+@media (prefers-contrast: high) {
+  .btn:disabled {
+    background-color: var(--high-contrast-disabled) !important;
+    color: var(--text-neutral-strong) !important;
+    border-color: var(--high-contrast-disabled) !important;
+  }
+}
+

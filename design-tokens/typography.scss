@@ -1,0 +1,266 @@
+// ================================
+// DÁP Design System - Typography Tokens (SCSS)
+// Automatikusan generálva a Figma design rendszerből
+// ================================
+
+// Font Families
+$family-primary: 'Inter', sans-serif;
+$family-secondary: 'Inter', sans-serif;
+
+// Font Sizes
+$size-2xs: 10px;
+$size-xs: 12px;
+$size-sm: 14px;
+$size-base: 16px;
+$size-lg: 18px;
+$size-xl: 20px;
+$size-2xl: 22px;
+$size-3xl: 24px;
+$size-4xl: 28px;
+$size-5xl: 32px;
+$size-6xl: 36px;
+$size-7xl: 40px;
+$size-8xl: 46px;
+$size-9xl: 52px;
+$size-10xl: 58px;
+$size-11xl: 66px;
+$size-12xl: 74px;
+
+// Aliases
+$size-heading-1: 32px;
+$size-heading-2: 28px;
+
+// Font Weights
+$weight-medium: 500;
+$weight-bold: 700;
+$weight-medium-italic: 500;
+$weight-bold-italic: 700;
+
+// Line Heights
+$line-height-heading: 1.25;
+$line-height-body: 1.5;
+$line-height-tight: 1.2;
+$line-height-relaxed: 1.6;
+
+// Letter Spacing
+$letter-spacing-heading-1: -0.64px;
+
+// ================================
+// MIXINS for Typography Styles
+// ================================
+
+// Heading Mixins
+@mixin heading-1 {
+  font-family: $family-primary;
+  font-size: $size-5xl;
+  font-weight: $weight-bold;
+  line-height: $line-height-heading;
+  letter-spacing: $letter-spacing-heading-1;
+}
+
+@mixin heading-2 {
+  font-family: $family-primary;
+  font-size: $size-4xl;
+  font-weight: $weight-bold;
+  line-height: $line-height-heading;
+}
+
+@mixin heading-3 {
+  font-family: $family-primary;
+  font-size: $size-3xl;
+  font-weight: $weight-bold;
+  line-height: $line-height-heading;
+}
+
+@mixin heading-4 {
+  font-family: $family-primary;
+  font-size: $size-xl;
+  font-weight: $weight-bold;
+  line-height: $line-height-heading;
+}
+
+@mixin heading-5 {
+  font-family: $family-primary;
+  font-size: $size-lg;
+  font-weight: $weight-bold;
+  line-height: $line-height-heading;
+}
+
+@mixin heading-6 {
+  font-family: $family-primary;
+  font-size: $size-base;
+  font-weight: $weight-bold;
+  line-height: $line-height-heading;
+}
+
+// Body Text Mixins
+@mixin body-large {
+  font-family: $family-primary;
+  font-size: $size-lg;
+  font-weight: $weight-medium;
+  line-height: $line-height-body;
+}
+
+@mixin body-base {
+  font-family: $family-primary;
+  font-size: $size-base;
+  font-weight: $weight-medium;
+  line-height: $line-height-body;
+}
+
+@mixin body-small {
+  font-family: $family-primary;
+  font-size: $size-sm;
+  font-weight: $weight-medium;
+  line-height: $line-height-body;
+}
+
+// Label Mixins
+@mixin label {
+  font-family: $family-primary;
+  font-size: $size-sm;
+  font-weight: $weight-medium;
+  line-height: $line-height-tight;
+}
+
+@mixin label-small {
+  font-family: $family-primary;
+  font-size: $size-xs;
+  font-weight: $weight-bold;
+  line-height: $line-height-tight;
+}
+
+// Utility Mixins
+@mixin font-size($size) {
+  font-size: $size;
+}
+
+@mixin font-weight($weight) {
+  font-weight: $weight;
+}
+
+@mixin line-height($height) {
+  line-height: $height;
+}
+
+@mixin text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin text-clamp($lines: 2) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@mixin responsive-font($min-size, $max-size, $min-width: 320px, $max-width: 1200px) {
+  font-size: calc(#{$min-size} + (#{$max-size} - #{$min-size}) * ((100vw - #{$min-width}) / (#{$max-width} - #{$min-width})));
+  
+  @media (max-width: $min-width) {
+    font-size: $min-size;
+  }
+  
+  @media (min-width: $max-width) {
+    font-size: $max-size;
+  }
+}
+
+// Font smoothing
+@mixin font-smooth {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// ================================
+// Typography Scale Maps (for loops)
+// ================================
+
+$font-sizes: (
+  '2xs': $size-2xs,
+  'xs': $size-xs,
+  'sm': $size-sm,
+  'base': $size-base,
+  'lg': $size-lg,
+  'xl': $size-xl,
+  '2xl': $size-2xl,
+  '3xl': $size-3xl,
+  '4xl': $size-4xl,
+  '5xl': $size-5xl,
+  '6xl': $size-6xl,
+  '7xl': $size-7xl,
+  '8xl': $size-8xl,
+  '9xl': $size-9xl,
+  '10xl': $size-10xl,
+  '11xl': $size-11xl,
+  '12xl': $size-12xl
+);
+
+$font-weights: (
+  'medium': $weight-medium,
+  'bold': $weight-bold
+);
+
+$line-heights: (
+  'heading': $line-height-heading,
+  'body': $line-height-body,
+  'tight': $line-height-tight,
+  'relaxed': $line-height-relaxed
+);
+
+// ================================
+// Usage Examples
+// ================================
+
+/*
+// Basic usage
+h1 {
+  @include heading-1;
+}
+
+.card-title {
+  @include heading-3;
+}
+
+p {
+  @include body-base;
+}
+
+.label {
+  @include label;
+}
+
+// Custom combinations
+.custom-heading {
+  font-family: $family-primary;
+  font-size: $size-4xl;
+  font-weight: $weight-bold;
+  line-height: $line-height-tight;
+}
+
+// Responsive typography
+.hero-title {
+  @include responsive-font(32px, 74px);
+  @include font-smooth;
+}
+
+// Text truncation
+.ellipsis-text {
+  @include text-truncate;
+}
+
+// Multi-line clamp
+.description {
+  @include text-clamp(3);
+}
+
+// Using maps
+@each $name, $size in $font-sizes {
+  .text-#{$name} {
+    font-size: $size;
+  }
+}
+*/
+

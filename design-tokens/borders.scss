@@ -1,0 +1,115 @@
+// ================================
+// DÁP Design System - Border Tokens (SCSS)
+// Automatikusan generálva a Figma design rendszerből
+// ================================
+
+// Border Widths
+$border-width-base: 1px;
+$border-width-medium: 2px;
+$border-width-thick: 3px;
+
+// Border Radius
+$radius-none: 0;
+$radius-small: 4px;
+$radius-base: 8px;       // Base radius for buttons and inputs
+$radius-medium: 8px;     // Alias for base
+$radius-large: 16px;
+$radius-rounded: 1000px;
+
+// Border Colors - Neutral
+$border-neutral-base: #606b7a;
+$border-neutral-divider: rgba(0, 0, 0, 0.1);
+$border-neutral-transparent-interactive: rgba(255, 255, 255, 0);
+
+// Border Colors - Semantic
+$border-brand-base: #4258ed;
+$border-positive-base: #007b24;
+$border-negative-base: #d40d00;
+$border-warning-base: #a65200;
+$border-info-base: #006faa;
+
+// ================================
+// MIXINS for Borders
+// ================================
+
+@mixin border($width: $border-width-base, $style: solid, $color: $border-neutral-base) {
+  border: $width $style $color;
+}
+
+@mixin border-top($width: $border-width-base, $style: solid, $color: $border-neutral-base) {
+  border-top: $width $style $color;
+}
+
+@mixin border-right($width: $border-width-base, $style: solid, $color: $border-neutral-base) {
+  border-right: $width $style $color;
+}
+
+@mixin border-bottom($width: $border-width-base, $style: solid, $color: $border-neutral-base) {
+  border-bottom: $width $style $color;
+}
+
+@mixin border-left($width: $border-width-base, $style: solid, $color: $border-neutral-base) {
+  border-left: $width $style $color;
+}
+
+@mixin border-radius($radius: $radius-small) {
+  border-radius: $radius;
+}
+
+@mixin divider-horizontal {
+  border-top: $border-width-base solid $border-neutral-divider;
+}
+
+@mixin divider-vertical {
+  border-left: $border-width-base solid $border-neutral-divider;
+}
+
+@mixin card-border {
+  @include border($border-width-base, solid, $border-neutral-divider);
+  @include border-radius($radius-large);
+}
+
+@mixin focus-ring {
+  outline: $border-width-medium solid $border-brand-base;
+  outline-offset: 2px;
+}
+
+// ================================
+// Usage Examples
+// ================================
+
+/*
+// Basic border
+.card {
+  @include border;
+  @include border-radius($radius-large);
+}
+
+// Custom border
+.button {
+  @include border($border-width-medium, solid, $border-brand-base);
+  @include border-radius($radius-small);
+}
+
+// Divider
+.divider {
+  @include divider-horizontal;
+}
+
+// Card style
+.card {
+  @include card-border;
+  padding: $spacing-400;
+}
+
+// Focus state
+.input:focus {
+  @include focus-ring;
+}
+
+// Different sides
+.header {
+  @include border-bottom($border-width-base, solid, $border-neutral-divider);
+}
+*/
+

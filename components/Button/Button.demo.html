@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Component Demo - DÁP Design System</title>
+    
+    <!-- Remixicon -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    
+    <!-- Design System Tokens -->
+    <link rel="stylesheet" href="../../design-tokens/colors.css">
+    <link rel="stylesheet" href="../../design-tokens/typography.css">
+    <link rel="stylesheet" href="../../design-tokens/spacing.css">
+    <link rel="stylesheet" href="../../design-tokens/borders.css">
+    <link rel="stylesheet" href="../../design-tokens/elevation.css">
+    <link rel="stylesheet" href="../../design-tokens/components.css">
+    
+    <!-- Button Component -->
+    <link rel="stylesheet" href="./Button.css">
+    
+    <style>
+        body {
+            font-family: var(--font-family-primary);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: var(--spacing-1000);
+            margin: 0;
+        }
+        
+        .demo-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: var(--radius-large);
+            padding: var(--spacing-1200);
+            box-shadow: var(--elevation-600);
+        }
+        
+        .demo-header {
+            text-align: center;
+            margin-bottom: var(--spacing-1600);
+            padding-bottom: var(--spacing-1000);
+            border-bottom: 2px solid var(--background-neutral-strong);
+        }
+        
+        .demo-header h1 {
+            font-size: var(--size-8xl);
+            font-weight: var(--weight-bold);
+            color: var(--text-neutral-strong);
+            margin: 0 0 var(--spacing-400) 0;
+        }
+        
+        .demo-header p {
+            font-size: var(--size-lg);
+            color: var(--text-neutral-subtle);
+            margin: 0;
+        }
+        
+        .demo-section {
+            margin-bottom: var(--spacing-2000);
+        }
+        
+        .demo-section-title {
+            font-size: var(--size-6xl);
+            font-weight: var(--weight-bold);
+            color: var(--text-neutral-strong);
+            margin-bottom: var(--spacing-600);
+            padding-bottom: var(--spacing-400);
+            border-bottom: 1px solid var(--background-neutral-strong);
+        }
+        
+        .demo-subsection {
+            margin-bottom: var(--spacing-1200);
+        }
+        
+        .demo-subsection-title {
+            font-size: var(--size-3xl);
+            font-weight: var(--weight-medium);
+            color: var(--text-neutral-strong);
+            margin-bottom: var(--spacing-600);
+        }
+        
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-600);
+            margin-bottom: var(--spacing-800);
+        }
+        
+        .demo-row {
+            display: flex;
+            gap: var(--spacing-400);
+            margin-bottom: var(--spacing-600);
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        
+        .demo-item {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-300);
+            padding: var(--spacing-400);
+            background: var(--background-neutral-strong);
+            border-radius: var(--radius-medium);
+        }
+        
+        .demo-label {
+            font-size: var(--size-xs);
+            font-weight: var(--weight-bold);
+            color: var(--text-neutral-subtle);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .dark-bg {
+            background: var(--neutral-1700);
+            padding: var(--spacing-1000);
+            border-radius: var(--radius-medium);
+            margin: var(--spacing-600) 0;
+        }
+        
+        .code-block {
+            background: var(--neutral-100);
+            padding: var(--spacing-400);
+            border-radius: var(--radius-small);
+            font-family: 'Courier New', monospace;
+            font-size: var(--size-sm);
+            overflow-x: auto;
+            margin-top: var(--spacing-300);
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-container">
+        <div class="demo-header">
+            <h1>🔘 Button Component</h1>
+            <p>DÁP Design System UI Kit 1.2 - Interaktív Demo</p>
+        </div>
+        
+        <!-- PRIMARY BUTTONS -->
+        <div class="demo-section">
+            <h2 class="demo-section-title">1. Primary Buttons</h2>
+            <p>Kitöltött háttér, magas kontrasztú. Elsődleges műveletekhez használd.</p>
+            
+            <!-- Sizes -->
+            <div class="demo-subsection">
+                <h3 class="demo-subsection-title">Méretek</h3>
+                <div class="demo-row">
+                    <button class="btn btn-primary btn-large">
+                        <i class="ri-add-line icon-lg icon-inverted"></i>
+                        <span class="btn-text">Large (48px)</span>
+                    </button>
+                    <button class="btn btn-primary btn-medium">
+                        <i class="ri-add-line icon-md icon-inverted"></i>
+                        <span class="btn-text">Medium (40px)</span>
+                    </button>
+                    <button class="btn btn-primary btn-small">
+                        <i class="ri-add-line icon-sm icon-inverted"></i>
+                        <span class="btn-text">Small (32px)</span>
+                    </button>
+                    <button class="btn btn-primary btn-xsmall">
+                        <i class="ri-add-line icon-xs icon-inverted"></i>
+                        <span class="btn-text">XSmall (24px)</span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- States -->
+            <div class="demo-subsection">
+                <h3 class="demo-subsection-title">Állapotok</h3>
+                <div class="demo-row">
+                    <button class="btn btn-primary btn-medium">
+                        <span class="btn-text">Enabled</span>
+                    </button>
+                    <button class="btn btn-primary btn-medium" disabled>
+                        <span class="btn-text">Disabled</span>
+                    </button>
+                    <button class="btn btn-primary btn-medium btn-loading">
+                        <i class="ri-loader-2-line icon-md icon-inverted btn-spinner"></i>
+                        <span class="btn-text">Loading</span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Colors -->
+            <div class="demo-subsection">
+                <h3 class="demo-subsection-title">Színek</h3>
+                <div class="demo-row">
+                    <button class="btn btn-primary btn-medium">
+                        <i class="ri-check-line icon-md icon-inverted"></i>
+                        <span class="btn-text">Brand</span>
+                    </button>
+                    <button class="btn btn-primary btn-medium btn-negative">
+                        <i class="ri-delete-bin-line icon-md icon-inverted"></i>
+                        <span class="btn-text">Negative</span>
+                    </button>
+                </div>
+                
+                <div class="dark-bg">
+                    <div class="demo-row">
+                        <button class="btn btn-primary btn-medium btn-inverted">
+                            <i class="ri-star-line icon-md icon-brand"></i>
+                            <span class="btn-text">Inverted</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Icon Only -->
+            <div class="demo-subsection">
+                <h3 class="demo-subsection-title">Csak Ikon</h3>
+                <div class="demo-row">
+                    <button class="btn btn-primary btn-large btn-icon-only" aria-label="Search">
+                        <i class="ri-search-line icon-lg icon-inverted"></i>
+                    </button>
+                    <button class="btn btn-primary btn-medium btn-icon-only" aria-label="Search">
+                        <i class="ri-search-line icon-md icon-inverted"></i>
+                    </button>
+                    <button class="btn btn-primary btn-small btn-icon-only" aria-label="Search">
+                        <i class="ri-search-line icon-sm icon-inverted"></i>
+                    </button>
+                    <button class="btn btn-primary btn-xsmall btn-icon-only" aria-label="Search">
+                        <i class="ri-search-line icon-xs icon-inverted"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- OUTLINE BUTTONS -->
+        <div class="demo-section">
+            <h2 class="demo-section-title">2. Outline Buttons</h2>
+            <p>Csak kerettel, átlátszó háttér. Másodlagos műveletekhez használd.</p>
+            
+            <!-- Sizes -->
+            <div class="demo-subsection">
+                <h3 class="demo-subsection-title">Méretek</h3>
+                <div class="demo-row">
+                    <button class="btn btn-outline btn-large">
+                        <i class="ri-arrow-left-line icon-lg icon-brand"></i>
+                        <span class="btn-text">Large</span>
+                    </button>
+                    <button class="btn btn-outline btn-medium">
+                        <i class="ri-arrow-left-line icon-md icon-brand"></i>
+                        <span class="btn-text">Medium</span>
+                    </button>
+                    <button class="btn btn-outline btn-small">
+                        <i class="ri-arrow-left-line icon-sm icon-brand"></i>
+                        <span class="btn-text">Small</span>
+                    </button>
+                    <button class="btn btn-outline btn-xsmall">
+                        <i class="ri-arrow-left-line icon-xs icon-brand"></i>
+                        <span class="btn-text">XSmall</span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Colors -->
+            <div class="demo-subsection">
+                <h3 class="demo-subsection-title">Színek</h3>
+                <div class="demo-row">
+                    <button class="btn btn-outline btn-medium">
+                        <i class="ri-download-line icon-md icon-brand"></i>
+                        <span class="btn-text">Brand</span>
+                    </button>
+                    <button class="btn btn-outline btn-medium btn-negative">
+                        <i class="ri-close-line icon-md icon-negative"></i>
+                        <span class="btn-text">Negative</span>
+                    </button>
+                </div>
+                
+                <div class="dark-bg">
+                    <div class="demo-row">
+                        <button class="btn btn-outline btn-medium btn-inverted">
+                            <i class="ri-upload-line icon-md icon-inverted"></i>
+                            <span class="btn-text">Inverted</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Icon Only -->
+            <div class="demo-subsection">
+                <h3 class="demo-subsection-title">Csak Ikon</h3>
+                <div class="demo-row">
+                    <button class="btn btn-outline btn-large btn-icon-only" aria-label="Edit">
+                        <i class="ri-edit-line icon-lg icon-brand"></i>
+                    </button>
+                    <button class="btn btn-outline btn-medium btn-icon-only" aria-label="Edit">
+                        <i class="ri-edit-line icon-md icon-brand"></i>
+                    </button>
+                    <button class="btn btn-outline btn-small btn-icon-only" aria-label="Edit">
+                        <i class="ri-edit-line icon-sm icon-brand"></i>
+                    </button>
+                    <button class="btn btn-outline btn-xsmall btn-icon-only" aria-label="Edit">
+                        <i class="ri-edit-line icon-xs icon-brand"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- SUBTLE BUTTONS -->
+        <div class="demo-section">
+            <h2 class="demo-section-title">3. Subtle Buttons</h2>
+            <p>Enyhe háttér, finom megjelenés. Harmadlagos műveletekhez használd.</p>
+            
+            <!-- Sizes -->
+            <div class="demo-subsection">
+                <h3 class="demo-subsection-title">Méretek</h3>
+                <div class="demo-row">
+                    <button class="btn btn-subtle btn-large">
+                        <i class="ri-information-line icon-lg icon-brand"></i>
+                        <span class="btn-text">Large</span>
+                    </button>
+                    <button class="btn btn-subtle btn-medium">
+                        <i class="ri-information-line icon-md icon-brand"></i>
+                        <span class="btn-text">Medium</span>
+                    </button>
+                    <button class="btn btn-subtle btn-small">
+                        <i class="ri-information-line icon-sm icon-brand"></i>
+                        <span class="btn-text">Small</span>
+                    </button>
+                    <button class="btn btn-subtle btn-xsmall">
+                        <i class="ri-information-line icon-xs icon-brand"></i>
+                        <span class="btn-text">XSmall</span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Colors -->
+            <div class="demo-subsection">
+                <h3 class="demo-subsection-title">Színek</h3>
+                <div class="demo-row">
+                    <button class="btn btn-subtle btn-medium">
+                        <i class="ri-share-line icon-md icon-brand"></i>
+                        <span class="btn-text">Brand</span>
+                    </button>
+                    <button class="btn btn-subtle btn-medium btn-neutral">
+                        <i class="ri-more-line icon-md icon-default"></i>
+                        <span class="btn-text">Neutral</span>
+                    </button>
+                    <button class="btn btn-subtle btn-medium btn-negative">
+                        <i class="ri-error-warning-line icon-md icon-negative"></i>
+                        <span class="btn-text">Negative</span>
+                    </button>
+                </div>
+                
+                <div class="dark-bg">
+                    <div class="demo-row">
+                        <button class="btn btn-subtle btn-medium btn-inverted">
+                            <i class="ri-heart-line icon-md icon-inverted"></i>
+                            <span class="btn-text">Inverted</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Quiet -->
+            <div class="demo-subsection">
+                <h3 class="demo-subsection-title">Quiet Variáció (nincs border)</h3>
+                <div class="demo-row">
+                    <button class="btn btn-subtle btn-medium btn-quiet">
+                        <i class="ri-file-copy-line icon-md icon-brand"></i>
+                        <span class="btn-text">Quiet Button</span>
+                    </button>
+                    <button class="btn btn-subtle btn-medium btn-icon-only btn-quiet" aria-label="More">
+                        <i class="ri-more-line icon-md icon-brand"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- TOGGLE BUTTONS -->
+        <div class="demo-section">
+            <h2 class="demo-section-title">4. Toggle Buttons</h2>
+            <p>Ki/be kapcsolható állapot. Filterekhez, toolbar toggles-hoz használd.</p>
+            
+            <!-- States -->
+            <div class="demo-subsection">
+                <h3 class="demo-subsection-title">Állapotok</h3>
+                <div class="demo-row">
+                    <button class="btn btn-toggle btn-medium">
+                        <i class="ri-heart-line icon-md icon-default"></i>
+                        <span class="btn-text">Not Selected</span>
+                    </button>
+                    <button class="btn btn-toggle btn-medium btn-selected">
+                        <i class="ri-heart-fill icon-md icon-inverted"></i>
+                        <span class="btn-text">Selected</span>
+                    </button>
+                    <button class="btn btn-toggle btn-medium" disabled>
+                        <i class="ri-heart-line icon-md icon-default"></i>
+                        <span class="btn-text">Disabled</span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Sizes -->
+            <div class="demo-subsection">
+                <h3 class="demo-subsection-title">Méretek</h3>
+                <div class="demo-row">
+                    <button class="btn btn-toggle btn-large">
+                        <i class="ri-star-line icon-lg icon-default"></i>
+                        <span class="btn-text">Large</span>
+                    </button>
+                    <button class="btn btn-toggle btn-medium btn-selected">
+                        <i class="ri-star-fill icon-md icon-inverted"></i>
+                        <span class="btn-text">Medium</span>
+                    </button>
+                    <button class="btn btn-toggle btn-small">
+                        <i class="ri-star-line icon-sm icon-default"></i>
+                        <span class="btn-text">Small</span>
+                    </button>
+                    <button class="btn btn-toggle btn-xsmall btn-selected">
+                        <i class="ri-star-fill icon-xs icon-inverted"></i>
+                        <span class="btn-text">XSmall</span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Icon Only -->
+            <div class="demo-subsection">
+                <h3 class="demo-subsection-title">Csak Ikon</h3>
+                <div class="demo-row">
+                    <button class="btn btn-toggle btn-large btn-icon-only" aria-label="Favorite" aria-pressed="false">
+                        <i class="ri-bookmark-line icon-lg icon-default"></i>
+                    </button>
+                    <button class="btn btn-toggle btn-medium btn-icon-only btn-selected" aria-label="Favorite" aria-pressed="true">
+                        <i class="ri-bookmark-fill icon-md icon-inverted"></i>
+                    </button>
+                    <button class="btn btn-toggle btn-small btn-icon-only" aria-label="Favorite" aria-pressed="false">
+                        <i class="ri-bookmark-line icon-sm icon-default"></i>
+                    </button>
+                    <button class="btn btn-toggle btn-xsmall btn-icon-only btn-selected" aria-label="Favorite" aria-pressed="true">
+                        <i class="ri-bookmark-fill icon-xs icon-inverted"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- REAL-WORLD EXAMPLES -->
+        <div class="demo-section">
+            <h2 class="demo-section-title">5. Valós Példák</h2>
+            
+            <!-- Form Actions -->
+            <div class="demo-subsection">
+                <h3 class="demo-subsection-title">Form Actions</h3>
+                <div class="demo-row">
+                    <button class="btn btn-outline btn-medium">
+                        <span class="btn-text">Cancel</span>
+                    </button>
+                    <button class="btn btn-primary btn-medium">
+                        <i class="ri-save-line icon-md icon-inverted"></i>
+                        <span class="btn-text">Save Changes</span>
+                    </button>
+                </div>
+                <div class="code-block">
+&lt;button class="btn btn-outline btn-medium"&gt;Cancel&lt;/button&gt;
+&lt;button class="btn btn-primary btn-medium"&gt;Save Changes&lt;/button&gt;
+                </div>
+            </div>
+            
+            <!-- Card Actions -->
+            <div class="demo-subsection">
+                <h3 class="demo-subsection-title">Card Actions</h3>
+                <div class="demo-row">
+                    <button class="btn btn-subtle btn-small btn-icon-only btn-quiet" aria-label="Edit">
+                        <i class="ri-edit-line icon-sm icon-brand"></i>
+                    </button>
+                    <button class="btn btn-subtle btn-small btn-icon-only btn-quiet" aria-label="Share">
+                        <i class="ri-share-line icon-sm icon-brand"></i>
+                    </button>
+                    <button class="btn btn-subtle btn-small btn-icon-only btn-quiet btn-negative" aria-label="Delete">
+                        <i class="ri-delete-bin-line icon-sm icon-negative"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Call-to-Action -->
+            <div class="demo-subsection">
+                <h3 class="demo-subsection-title">Call-to-Action</h3>
+                <div class="demo-row">
+                    <button class="btn btn-primary btn-large btn-full-width">
+                        <i class="ri-rocket-line icon-lg icon-inverted"></i>
+                        <span class="btn-text">Get Started Free</span>
+                        <i class="ri-arrow-right-line icon-lg icon-inverted"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Toolbar -->
+            <div class="demo-subsection">
+                <h3 class="demo-subsection-title">Toolbar</h3>
+                <div class="demo-row">
+                    <button class="btn btn-toggle btn-small btn-icon-only btn-selected" aria-label="Bold">
+                        <i class="ri-bold icon-sm icon-inverted"></i>
+                    </button>
+                    <button class="btn btn-toggle btn-small btn-icon-only" aria-label="Italic">
+                        <i class="ri-italic icon-sm icon-default"></i>
+                    </button>
+                    <button class="btn btn-toggle btn-small btn-icon-only" aria-label="Underline">
+                        <i class="ri-underline icon-sm icon-default"></i>
+                    </button>
+                    <div style="width: 1px; height: 24px; background: var(--border-color-neutral-divider);"></div>
+                    <button class="btn btn-subtle btn-small btn-icon-only btn-quiet" aria-label="Link">
+                        <i class="ri-link icon-sm icon-brand"></i>
+                    </button>
+                    <button class="btn btn-subtle btn-small btn-icon-only btn-quiet" aria-label="Image">
+                        <i class="ri-image-line icon-sm icon-brand"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- FOOTER -->
+        <div style="text-align: center; padding-top: var(--spacing-1600); border-top: 2px solid var(--background-neutral-strong);">
+            <p style="color: var(--text-neutral-subtle); font-size: var(--size-sm);">
+                DÁP Design System UI Kit 1.2 | <a href="https://www.figma.com/design/wlzFe2hkjpLnBYiNfZbLBM/D%C3%81P_Design_System_UI_Kit_1.2?node-id=564-1370" style="color: var(--brand-1000);">Figma Source</a>
+            </p>
+        </div>
+    </div>
+    
+    <!-- Interactive Script -->
+    <script>
+        // Spinner animation
+        document.addEventListener('DOMContentLoaded', () => {
+            // Toggle button interactive demo
+            const toggleButtons = document.querySelectorAll('.btn-toggle:not([disabled])');
+            toggleButtons.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    btn.classList.toggle('btn-selected');
+                    const isSelected = btn.classList.contains('btn-selected');
+                    const ariaPressed = btn.getAttribute('aria-pressed');
+                    if (ariaPressed !== null) {
+                        btn.setAttribute('aria-pressed', isSelected);
+                    }
+                    
+                    // Icon swap
+                    const icon = btn.querySelector('i');
+                    if (icon) {
+                        if (isSelected) {
+                            icon.className = icon.className.replace('-line', '-fill').replace('icon-default', 'icon-inverted');
+                        } else {
+                            icon.className = icon.className.replace('-fill', '-line').replace('icon-inverted', 'icon-default');
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+

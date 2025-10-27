@@ -1,0 +1,129 @@
+// ================================
+// DÁP Design System - Spacing Tokens (SCSS)
+// Automatikusan generálva a Figma design rendszerből
+// ================================
+
+// Spacing Scale
+$spacing-0: 0;
+$spacing-100: 4px;
+$spacing-200: 8px;
+$spacing-300: 12px;
+$spacing-400: 16px;
+$spacing-600: 24px;
+$spacing-1000: 40px;
+$spacing-1200: 48px;
+$spacing-1600: 64px;
+$spacing-2000: 80px;
+$spacing-3000: 120px;
+
+// Aliases
+$space-0: $spacing-0;
+$space-xs: $spacing-100;
+$space-sm: $spacing-200;
+$space-sm-md: $spacing-300;
+$space-md: $spacing-400;
+$space-lg: $spacing-600;
+$space-xl: $spacing-1000;
+$space-2xl: $spacing-1200;
+$space-3xl: $spacing-1600;
+$space-4xl: $spacing-2000;
+$space-5xl: $spacing-3000;
+
+// Spacing Map
+$spacings: (
+  '0': $spacing-0,
+  '100': $spacing-100,
+  '200': $spacing-200,
+  '300': $spacing-300,
+  '400': $spacing-400,
+  '600': $spacing-600,
+  '1000': $spacing-1000,
+  '1200': $spacing-1200,
+  '1600': $spacing-1600,
+  '2000': $spacing-2000,
+  '3000': $spacing-3000
+);
+
+// ================================
+// MIXINS for Spacing
+// ================================
+
+@mixin margin($value) {
+  margin: $value;
+}
+
+@mixin margin-x($value) {
+  margin-left: $value;
+  margin-right: $value;
+}
+
+@mixin margin-y($value) {
+  margin-top: $value;
+  margin-bottom: $value;
+}
+
+@mixin padding($value) {
+  padding: $value;
+}
+
+@mixin padding-x($value) {
+  padding-left: $value;
+  padding-right: $value;
+}
+
+@mixin padding-y($value) {
+  padding-top: $value;
+  padding-bottom: $value;
+}
+
+@mixin gap($value) {
+  gap: $value;
+}
+
+// ================================
+// Usage Examples
+// ================================
+
+/*
+// Basic usage
+.card {
+  padding: $spacing-400;
+  margin-bottom: $spacing-600;
+}
+
+// Using aliases
+.button {
+  padding-left: $space-md;
+  padding-right: $space-md;
+}
+
+// Using mixins
+.container {
+  @include padding-x($space-xl);
+  @include margin-y($space-lg);
+}
+
+// Responsive spacing
+.hero {
+  padding: $space-md;
+  
+  @media (min-width: 768px) {
+    padding: $space-xl;
+  }
+  
+  @media (min-width: 1024px) {
+    padding: $space-3xl;
+  }
+}
+
+// Using map
+@each $name, $value in $spacings {
+  .m-#{$name} {
+    margin: $value;
+  }
+  .p-#{$name} {
+    padding: $value;
+  }
+}
+*/
+

@@ -1,0 +1,241 @@
+/**
+ * Design System Icon Tokens - DÁP Design System UI Kit 1.2
+ * Icon méretek, színek és spacing tokenek
+ */
+
+:root {
+  /* ============================================
+     ICON SIZES
+     ============================================ */
+  
+  /* Extra Small - 12px */
+  --icon-size-xs: 12px;
+  
+  /* Small - 16px */
+  --icon-size-sm: 16px;
+  
+  /* Medium - 20px (alapértelmezett) */
+  --icon-size-md: 20px;
+  --icon-size-base: var(--icon-size-md);
+  
+  /* Large - 24px */
+  --icon-size-lg: 24px;
+  
+  /* Extra Large - 32px */
+  --icon-size-xl: 32px;
+  
+  /* 2X Large - 48px */
+  --icon-size-2xl: 48px;
+  
+  /* 3X Large - 64px */
+  --icon-size-3xl: 64px;
+  
+  /* ============================================
+     ICON COLORS (Component-specific)
+     ============================================ */
+  
+  /* Default Icon Colors */
+  --icon-color-default: var(--neutral-1600, #404753);
+  --icon-color-subtle: var(--neutral-1200, #8895a7);
+  --icon-color-muted: var(--neutral-900, #e9edf2);
+  --icon-color-inverted: var(--white-100, #ffffff);
+  
+  /* Brand Icon Colors */
+  --icon-color-brand: var(--color-brand-1000, #4258ed);
+  --icon-color-brand-hover: var(--color-brand-1100, #3547d1);
+  
+  /* Semantic Icon Colors */
+  --icon-color-positive: var(--semantic-green-1000, #007b24);
+  --icon-color-negative: var(--semantic-red-1000, #d40d00);
+  --icon-color-warning: var(--semantic-orange-1000, #c25f00);
+  --icon-color-info: var(--semantic-blue-1000, #006faa);
+  
+  /* Interactive Icon Colors */
+  --icon-color-interactive: var(--color-brand-1000, #4258ed);
+  --icon-color-interactive-hover: var(--color-brand-1100, #3547d1);
+  --icon-color-disabled: var(--neutral-900, #e9edf2);
+  
+  /* ============================================
+     ICON SPACING
+     ============================================ */
+  
+  /* Spacing between icon and text */
+  --icon-spacing-xs: var(--spacing-100, 4px);
+  --icon-spacing-sm: var(--spacing-200, 8px);
+  --icon-spacing-md: var(--spacing-300, 12px);
+  --icon-spacing-lg: var(--spacing-400, 16px);
+  
+  /* ============================================
+     ICON STROKE WIDTH
+     ============================================ */
+  
+  --icon-stroke-thin: 1;
+  --icon-stroke-regular: 1.5;
+  --icon-stroke-medium: 2;
+  --icon-stroke-bold: 2.5;
+}
+
+/* ============================================
+   ICON UTILITY CLASSES
+   ============================================ */
+
+/* Icon Sizes */
+.icon-xs { 
+  width: var(--icon-size-xs); 
+  height: var(--icon-size-xs); 
+}
+
+.icon-sm { 
+  width: var(--icon-size-sm); 
+  height: var(--icon-size-sm); 
+}
+
+.icon-md, 
+.icon { 
+  width: var(--icon-size-md); 
+  height: var(--icon-size-md); 
+}
+
+.icon-lg { 
+  width: var(--icon-size-lg); 
+  height: var(--icon-size-lg); 
+}
+
+.icon-xl { 
+  width: var(--icon-size-xl); 
+  height: var(--icon-size-xl); 
+}
+
+.icon-2xl { 
+  width: var(--icon-size-2xl); 
+  height: var(--icon-size-2xl); 
+}
+
+.icon-3xl { 
+  width: var(--icon-size-3xl); 
+  height: var(--icon-size-3xl); 
+}
+
+/* Icon Colors */
+.icon-default { color: var(--icon-color-default); }
+.icon-subtle { color: var(--icon-color-subtle); }
+.icon-muted { color: var(--icon-color-muted); }
+.icon-inverted { color: var(--icon-color-inverted); }
+.icon-brand { color: var(--icon-color-brand); }
+.icon-positive { color: var(--icon-color-positive); }
+.icon-negative { color: var(--icon-color-negative); }
+.icon-warning { color: var(--icon-color-warning); }
+.icon-info { color: var(--icon-color-info); }
+.icon-disabled { color: var(--icon-color-disabled); }
+
+/* Icon with Text */
+.icon-with-text {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--icon-spacing-sm);
+}
+
+.icon-with-text-lg {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--icon-spacing-md);
+}
+
+/* Icon Button */
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-200);
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  border-radius: var(--border-radius-small);
+  color: var(--icon-color-interactive);
+  transition: all 0.2s ease;
+}
+
+.icon-btn:hover {
+  background: var(--color-brand-alpha-10);
+  color: var(--icon-color-interactive-hover);
+}
+
+.icon-btn:active {
+  background: var(--color-brand-alpha-20);
+}
+
+.icon-btn:disabled {
+  color: var(--icon-color-disabled);
+  cursor: not-allowed;
+  background: transparent;
+}
+
+/* Icon Only (no text) */
+.icon-only {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Spinning Icon (for loaders) */
+.icon-spin {
+  animation: icon-spin 1s linear infinite;
+}
+
+@keyframes icon-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ============================================
+   SVG SPECIFIC STYLES
+   ============================================ */
+
+.icon svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+.icon-outline svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: var(--icon-stroke-regular);
+}
+
+/* ============================================
+   USAGE EXAMPLES
+   ============================================ */
+
+/*
+// HTML + SVG
+<button class="btn-primary icon-with-text">
+  <svg class="icon icon-md icon-inverted">
+    <use href="#icon-plus"/>
+  </svg>
+  <span>Add Item</span>
+</button>
+
+// Icon Button
+<button class="icon-btn" aria-label="Delete">
+  <svg class="icon icon-md">
+    <use href="#icon-trash"/>
+  </svg>
+</button>
+
+// Icon with React/Heroicons
+<button className="btn-primary">
+  <PlusIcon className="icon icon-md" style={{ color: 'var(--icon-color-inverted)' }} />
+  <span>Add Item</span>
+</button>
+
+// Spinning Icon (Loader)
+<svg class="icon icon-lg icon-brand icon-spin">
+  <use href="#icon-loader"/>
+</svg>
+*/
+

@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remixicon + Design System - DÁP</title>
+    
+    <!-- Remixicon Font -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    
+    <!-- Design System Tokens -->
+    <link rel="stylesheet" href="colors.css">
+    <link rel="stylesheet" href="typography.css">
+    <link rel="stylesheet" href="spacing.css">
+    <link rel="stylesheet" href="borders.css">
+    <link rel="stylesheet" href="elevation.css">
+    <link rel="stylesheet" href="icons.css">
+    <link rel="stylesheet" href="components.css">
+    
+    <style>
+        body {
+            font-family: var(--font-family-primary);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: var(--spacing-600);
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: white;
+            text-align: center;
+            margin-bottom: var(--spacing-1200);
+            font-size: 2.5rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .section {
+            background: white;
+            border-radius: var(--border-radius-large);
+            padding: var(--spacing-600);
+            margin-bottom: var(--spacing-600);
+            box-shadow: var(--elevation-300);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: var(--font-weight-bold);
+            margin-bottom: var(--spacing-400);
+            color: var(--neutral-1800);
+        }
+
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: var(--spacing-400);
+        }
+
+        .demo-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--spacing-200);
+            padding: var(--spacing-300);
+            border: 1px solid var(--neutral-300);
+            border-radius: var(--border-radius-small);
+            transition: all 0.2s ease;
+        }
+
+        .demo-item:hover {
+            border-color: var(--color-brand-1000);
+            box-shadow: var(--elevation-200);
+        }
+
+        .demo-label {
+            font-size: 0.75rem;
+            color: var(--neutral-1200);
+            text-align: center;
+        }
+
+        .button-group {
+            display: flex;
+            gap: var(--spacing-300);
+            flex-wrap: wrap;
+        }
+
+        code {
+            background: var(--neutral-200);
+            padding: 2px 6px;
+            border-radius: var(--border-radius-small);
+            font-family: 'Monaco', monospace;
+            font-size: 0.75rem;
+        }
+
+        .nav {
+            display: flex;
+            gap: var(--spacing-200);
+            background: var(--neutral-100);
+            padding: var(--spacing-200);
+            border-radius: var(--border-radius-medium);
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-200);
+            padding: var(--spacing-200) var(--spacing-300);
+            border-radius: var(--border-radius-small);
+            text-decoration: none;
+            color: var(--neutral-1600);
+            transition: all 0.2s ease;
+        }
+
+        .nav-item:hover {
+            background: var(--color-brand-100);
+            color: var(--color-brand-1000);
+        }
+
+        .field-group {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-200);
+            margin-bottom: var(--spacing-400);
+        }
+
+        .field-group label {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-200);
+            font-weight: var(--font-weight-medium);
+            color: var(--neutral-1600);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 Remixicon + Design System</h1>
+
+        <!-- Icon Sizes -->
+        <div class="section">
+            <h2 class="section-title">Icon Méretek (Design System Tokenekkel)</h2>
+            <div class="demo-grid">
+                <div class="demo-item">
+                    <i class="ri-home-line icon-xs icon-brand"></i>
+                    <div class="demo-label">xs - 12px<br><code>icon-xs</code></div>
+                </div>
+                
+                <div class="demo-item">
+                    <i class="ri-home-line icon-sm icon-brand"></i>
+                    <div class="demo-label">sm - 16px<br><code>icon-sm</code></div>
+                </div>
+                
+                <div class="demo-item">
+                    <i class="ri-home-line icon-md icon-brand"></i>
+                    <div class="demo-label">md - 20px<br><code>icon-md</code></div>
+                </div>
+                
+                <div class="demo-item">
+                    <i class="ri-home-line icon-lg icon-brand"></i>
+                    <div class="demo-label">lg - 24px<br><code>icon-lg</code></div>
+                </div>
+                
+                <div class="demo-item">
+                    <i class="ri-home-line icon-xl icon-brand"></i>
+                    <div class="demo-label">xl - 32px<br><code>icon-xl</code></div>
+                </div>
+                
+                <div class="demo-item">
+                    <i class="ri-home-line icon-2xl icon-brand"></i>
+                    <div class="demo-label">2xl - 48px<br><code>icon-2xl</code></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Icon Colors -->
+        <div class="section">
+            <h2 class="section-title">Icon Színek (Design System Tokenekkel)</h2>
+            <div class="demo-grid">
+                <div class="demo-item">
+                    <i class="ri-checkbox-circle-fill icon-lg icon-default"></i>
+                    <div class="demo-label">Default<br><code>icon-default</code></div>
+                </div>
+                
+                <div class="demo-item">
+                    <i class="ri-checkbox-circle-fill icon-lg icon-brand"></i>
+                    <div class="demo-label">Brand<br><code>icon-brand</code></div>
+                </div>
+                
+                <div class="demo-item">
+                    <i class="ri-checkbox-circle-fill icon-lg icon-positive"></i>
+                    <div class="demo-label">Positive<br><code>icon-positive</code></div>
+                </div>
+                
+                <div class="demo-item">
+                    <i class="ri-error-warning-fill icon-lg icon-negative"></i>
+                    <div class="demo-label">Negative<br><code>icon-negative</code></div>
+                </div>
+                
+                <div class="demo-item">
+                    <i class="ri-alert-fill icon-lg icon-warning"></i>
+                    <div class="demo-label">Warning<br><code>icon-warning</code></div>
+                </div>
+                
+                <div class="demo-item">
+                    <i class="ri-information-fill icon-lg icon-info"></i>
+                    <div class="demo-label">Info<br><code>icon-info</code></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Buttons + Remixicon -->
+        <div class="section">
+            <h2 class="section-title">Button Komponensek + Remixicon</h2>
+            
+            <h3 style="margin-bottom: 16px; font-size: 1.125rem;">Primary Buttons</h3>
+            <div class="button-group" style="margin-bottom: 24px;">
+                <button class="btn-primary">
+                    <i class="ri-add-line icon-md icon-inverted"></i>
+                    <span>Add Item</span>
+                </button>
+                
+                <button class="btn-primary destructive">
+                    <i class="ri-delete-bin-line icon-md icon-inverted"></i>
+                    <span>Delete</span>
+                </button>
+                
+                <button class="btn-primary">
+                    <i class="ri-save-line icon-md icon-inverted"></i>
+                    <span>Save</span>
+                </button>
+                
+                <button class="btn-primary" disabled>
+                    <i class="ri-loader-line icon-md icon-spin"></i>
+                    <span>Loading...</span>
+                </button>
+            </div>
+            
+            <h3 style="margin-bottom: 16px; font-size: 1.125rem;">Outline Buttons</h3>
+            <div class="button-group" style="margin-bottom: 24px;">
+                <button class="btn-outline">
+                    <i class="ri-edit-line icon-md icon-brand"></i>
+                    <span>Edit</span>
+                </button>
+                
+                <button class="btn-outline">
+                    <i class="ri-download-line icon-md icon-brand"></i>
+                    <span>Download</span>
+                </button>
+                
+                <button class="btn-outline">
+                    <i class="ri-share-line icon-md icon-brand"></i>
+                    <span>Share</span>
+                </button>
+            </div>
+            
+            <h3 style="margin-bottom: 16px; font-size: 1.125rem;">Icon Buttons</h3>
+            <div class="button-group">
+                <button class="icon-btn" aria-label="Add">
+                    <i class="ri-add-line icon-md"></i>
+                </button>
+                
+                <button class="icon-btn" aria-label="Edit">
+                    <i class="ri-edit-line icon-md"></i>
+                </button>
+                
+                <button class="icon-btn" aria-label="Delete">
+                    <i class="ri-delete-bin-line icon-md"></i>
+                </button>
+                
+                <button class="icon-btn" aria-label="Settings">
+                    <i class="ri-settings-line icon-md"></i>
+                </button>
+                
+                <button class="icon-btn" aria-label="Search">
+                    <i class="ri-search-line icon-md"></i>
+                </button>
+                
+                <button class="icon-btn" aria-label="Heart">
+                    <i class="ri-heart-line icon-md"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Banners + Remixicon -->
+        <div class="section">
+            <h2 class="section-title">Banner Komponensek + Remixicon</h2>
+            
+            <div style="display: flex; flex-direction: column; gap: 16px;">
+                <div class="banner positive">
+                    <i class="ri-checkbox-circle-line icon-lg icon-inverted"></i>
+                    <span><strong>Success!</strong> Operation completed successfully.</span>
+                </div>
+                
+                <div class="banner warning">
+                    <i class="ri-alert-line icon-lg" style="color: var(--banner-text-warning);"></i>
+                    <span><strong>Warning:</strong> Please review your settings.</span>
+                </div>
+                
+                <div class="banner negative">
+                    <i class="ri-error-warning-line icon-lg icon-inverted"></i>
+                    <span><strong>Error:</strong> Something went wrong.</span>
+                </div>
+                
+                <div class="banner informative">
+                    <i class="ri-information-line icon-lg icon-inverted"></i>
+                    <span><strong>Info:</strong> New updates are available.</span>
+                </div>
+                
+                <div class="banner brand">
+                    <i class="ri-star-line icon-lg icon-inverted"></i>
+                    <span><strong>New Feature!</strong> Check out our latest updates.</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Forms + Remixicon -->
+        <div class="section">
+            <h2 class="section-title">Form Fields + Remixicon</h2>
+            
+            <div style="max-width: 500px;">
+                <div class="field-group">
+                    <label>
+                        <i class="ri-user-line icon-sm icon-subtle"></i>
+                        <span>Username</span>
+                    </label>
+                    <input class="field" type="text" placeholder="Enter your username">
+                </div>
+                
+                <div class="field-group">
+                    <label>
+                        <i class="ri-mail-line icon-sm icon-subtle"></i>
+                        <span>Email Address</span>
+                    </label>
+                    <input class="field" type="email" placeholder="Enter your email">
+                </div>
+                
+                <div class="field-group">
+                    <label>
+                        <i class="ri-lock-line icon-sm icon-subtle"></i>
+                        <span>Password</span>
+                    </label>
+                    <input class="field" type="password" placeholder="Enter your password">
+                </div>
+                
+                <div class="field-group">
+                    <label>
+                        <i class="ri-phone-line icon-sm icon-subtle"></i>
+                        <span>Phone Number</span>
+                    </label>
+                    <input class="field" type="tel" placeholder="Enter your phone">
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation + Remixicon -->
+        <div class="section">
+            <h2 class="section-title">Navigation + Remixicon</h2>
+            
+            <nav class="nav">
+                <a href="#" class="nav-item">
+                    <i class="ri-home-line icon-md"></i>
+                    <span>Home</span>
+                </a>
+                
+                <a href="#" class="nav-item">
+                    <i class="ri-dashboard-line icon-md"></i>
+                    <span>Dashboard</span>
+                </a>
+                
+                <a href="#" class="nav-item">
+                    <i class="ri-file-list-line icon-md"></i>
+                    <span>Documents</span>
+                </a>
+                
+                <a href="#" class="nav-item">
+                    <i class="ri-settings-line icon-md"></i>
+                    <span>Settings</span>
+                </a>
+                
+                <a href="#" class="nav-item">
+                    <i class="ri-user-line icon-md"></i>
+                    <span>Profile</span>
+                </a>
+            </nav>
+        </div>
+
+        <!-- Popular Remixicons -->
+        <div class="section">
+            <h2 class="section-title">Népszerű Remixicon Ikonok</h2>
+            
+            <h3 style="margin-bottom: 16px; font-size: 1.125rem;">Line Variánsok (Outline)</h3>
+            <div class="demo-grid">
+                <div class="demo-item">
+                    <i class="ri-home-line icon-lg icon-default"></i>
+                    <div class="demo-label">ri-home-line</div>
+                </div>
+                <div class="demo-item">
+                    <i class="ri-heart-line icon-lg icon-negative"></i>
+                    <div class="demo-label">ri-heart-line</div>
+                </div>
+                <div class="demo-item">
+                    <i class="ri-star-line icon-lg icon-warning"></i>
+                    <div class="demo-label">ri-star-line</div>
+                </div>
+                <div class="demo-item">
+                    <i class="ri-settings-line icon-lg icon-default"></i>
+                    <div class="demo-label">ri-settings-line</div>
+                </div>
+                <div class="demo-item">
+                    <i class="ri-user-line icon-lg icon-brand"></i>
+                    <div class="demo-label">ri-user-line</div>
+                </div>
+                <div class="demo-item">
+                    <i class="ri-notification-line icon-lg icon-info"></i>
+                    <div class="demo-label">ri-notification-line</div>
+                </div>
+            </div>
+            
+            <h3 style="margin: 32px 0 16px; font-size: 1.125rem;">Fill Variánsok (Solid)</h3>
+            <div class="demo-grid">
+                <div class="demo-item">
+                    <i class="ri-home-fill icon-lg icon-default"></i>
+                    <div class="demo-label">ri-home-fill</div>
+                </div>
+                <div class="demo-item">
+                    <i class="ri-heart-fill icon-lg icon-negative"></i>
+                    <div class="demo-label">ri-heart-fill</div>
+                </div>
+                <div class="demo-item">
+                    <i class="ri-star-fill icon-lg icon-warning"></i>
+                    <div class="demo-label">ri-star-fill</div>
+                </div>
+                <div class="demo-item">
+                    <i class="ri-settings-fill icon-lg icon-default"></i>
+                    <div class="demo-label">ri-settings-fill</div>
+                </div>
+                <div class="demo-item">
+                    <i class="ri-user-fill icon-lg icon-brand"></i>
+                    <div class="demo-label">ri-user-fill</div>
+                </div>
+                <div class="demo-item">
+                    <i class="ri-notification-fill icon-lg icon-info"></i>
+                    <div class="demo-label">ri-notification-fill</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="section">
+            <h2 class="section-title">📊 Remixicon Statisztika</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+                <div style="background: var(--color-brand-100); padding: 16px; border-radius: 8px;">
+                    <div style="font-size: 2rem; font-weight: 700; color: var(--color-brand-1000);">2700+</div>
+                    <div style="font-size: 0.875rem; color: var(--neutral-1400);">Remixicon Ikonok</div>
+                </div>
+                
+                <div style="background: var(--semantic-green-100); padding: 16px; border-radius: 8px;">
+                    <div style="font-size: 2rem; font-weight: 700; color: var(--semantic-green-1000);">17</div>
+                    <div style="font-size: 0.875rem; color: var(--neutral-1400);">Icon Token (méret + szín)</div>
+                </div>
+                
+                <div style="background: var(--semantic-blue-100); padding: 16px; border-radius: 8px;">
+                    <div style="font-size: 2rem; font-weight: 700; color: var(--semantic-blue-1000);">931</div>
+                    <div style="font-size: 0.875rem; color: var(--neutral-1400);">Összes Design Token</div>
+                </div>
+                
+                <div style="background: var(--semantic-orange-100); padding: 16px; border-radius: 8px;">
+                    <div style="font-size: 2rem; font-weight: 700; color: var(--semantic-orange-1000);">✓</div>
+                    <div style="font-size: 0.875rem; color: var(--neutral-1400);">Apache 2.0 License</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div style="margin-top: 80px; text-align: center; color: white;">
+            <p style="font-size: 0.875rem; opacity: 0.9;">
+                🎨 DÁP Design System + Remixicon (2700+ icons)
+            </p>
+            <p style="font-size: 0.75rem; opacity: 0.7;">
+                Remixicon Icon Library: <a href="https://remixicon.com/" target="_blank" style="color: white;">remixicon.com</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
+

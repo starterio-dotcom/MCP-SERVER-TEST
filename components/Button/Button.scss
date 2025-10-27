@@ -1,0 +1,362 @@
+/**
+ * Button Styles (SCSS) - DÁP Design System
+ * Auto-generated from Figma design tokens
+ */
+
+/* ============================================
+   BUTTON MIXINS
+   ============================================ */
+
+@mixin button-base {
+  appearance: none;
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  cursor: pointer;
+  user-select: none;
+  
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-100);  // 4px - kisebb gap
+  
+  font-family: var(--family-primary);
+  font-weight: var(--weight-medium);
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+  
+  border-radius: var(--radius-rounded);  // 1000px - fully rounded
+  border-style: solid;
+  border-width: var(--border-width-base);
+  
+  transition: all 0.2s ease;
+  outline: none;
+  position: relative;
+  
+  &:focus-visible {
+    outline: 2px solid var(--focus-outer-ring);
+    outline-offset: 2px;
+  }
+  
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 1;
+  }
+}
+
+@mixin button-size($height, $padding, $font-size) {
+  height: $height;
+  padding: 0 $padding;
+  font-size: $font-size;
+  border-radius: var(--radius-rounded);  // 1000px
+  
+  &.btn-icon-only {
+    width: $height;
+    padding: 0;
+  }
+}
+
+@mixin button-variant-primary($bg, $bg-hover, $bg-pressed, $text, $bg-disabled: null, $text-disabled: null) {
+  background-color: $bg;
+  color: $text;
+  border-color: transparent;
+  
+  &:hover:not(:disabled) {
+    background-color: $bg-hover;
+  }
+  
+  &:active:not(:disabled) {
+    background-color: $bg-pressed;
+  }
+  
+  @if $bg-disabled {
+    &:disabled {
+      background-color: $bg-disabled;
+      color: $text-disabled;
+    }
+  }
+}
+
+@mixin button-variant-outline($text, $border, $text-hover, $border-hover, $text-pressed, $border-pressed, $text-disabled: null, $border-disabled: null) {
+  background-color: transparent;
+  color: $text;
+  border-color: $border;
+  
+  &:hover:not(:disabled) {
+    color: $text-hover;
+    border-color: $border-hover;
+  }
+  
+  &:active:not(:disabled) {
+    color: $text-pressed;
+    border-color: $border-pressed;
+  }
+  
+  @if $text-disabled {
+    &:disabled {
+      color: $text-disabled;
+      border-color: $border-disabled;
+    }
+  }
+}
+
+@mixin button-variant-subtle($bg, $text, $border, $bg-hover, $text-hover, $border-hover, $bg-pressed, $text-pressed, $border-pressed) {
+  background-color: $bg;
+  color: $text;
+  border-color: $border;
+  
+  &:hover:not(:disabled) {
+    background-color: $bg-hover;
+    color: $text-hover;
+    border-color: $border-hover;
+  }
+  
+  &:active:not(:disabled) {
+    background-color: $bg-pressed;
+    color: $text-pressed;
+    border-color: $border-pressed;
+  }
+}
+
+/* ============================================
+   BUTTON COMPONENT
+   ============================================ */
+
+.btn {
+  @include button-base;
+  
+  /* Sizes */
+  &-large {
+    @include button-size(48px, var(--spacing-600), var(--ui-button-size-Large));
+  }
+  
+  &-medium {
+    @include button-size(40px, var(--spacing-400), var(--size-base));
+  }
+  
+  &-small {
+    @include button-size(32px, var(--spacing-300), var(--size-sm));
+  }
+  
+  &-xsmall {
+    @include button-size(24px, var(--spacing-200), var(--size-xs));
+  }
+  
+  /* PRIMARY VARIANT */
+  &-primary {
+    @include button-variant-primary(
+      var(--button-primary-background-enabled),
+      var(--button-primary-background-hover),
+      var(--button-primary-background-pressed),
+      var(--button-primary-text-enabled),
+      var(--button-primary-background-disabled),
+      var(--button-primary-text-disabled)
+    );
+    
+    &.btn-negative {
+      @include button-variant-primary(
+        var(--button-primary-background-destructive-enabled),
+        var(--button-primary-background-destructive-hover),
+        var(--button-primary-background-destructive-pressed),
+        var(--button-primary-text-enabled)
+      );
+    }
+    
+    &.btn-inverted {
+      @include button-variant-primary(
+        var(--button-primary-background-inverted-enabled),
+        var(--button-primary-background-inverted-hover),
+        var(--button-primary-background-inverted-pressed),
+        var(--button-primary-text-inverted)
+      );
+    }
+  }
+  
+  /* OUTLINE VARIANT */
+  &-outline {
+    @include button-variant-outline(
+      var(--button-outline-text-enabled),
+      var(--button-outline-border-enabled),
+      var(--button-outline-text-hover),
+      var(--button-outline-border-hover),
+      var(--button-outline-text-pressed),
+      var(--button-outline-border-pressed),
+      var(--button-outline-text-disabled),
+      var(--button-outline-border-disabled)
+    );
+    
+    &.btn-negative {
+      @include button-variant-outline(
+        var(--button-outline-text-destructive-enabled),
+        var(--button-outline-border-destructive-enabled),
+        var(--button-outline-text-destructive-hover),
+        var(--button-outline-border-destructive-hover),
+        var(--button-outline-text-destructive-pressed),
+        var(--button-outline-border-destructive-pressed)
+      );
+    }
+    
+    &.btn-inverted {
+      @include button-variant-outline(
+        var(--button-outline-text-inverted-enabled),
+        var(--button-outline-border-inverted-enabled),
+        var(--button-outline-text-inverted-hover),
+        var(--button-outline-border-inverted-hover),
+        var(--button-outline-text-inverted-pressed),
+        var(--button-outline-border-inverted-pressed)
+      );
+    }
+  }
+  
+  /* SUBTLE VARIANT */
+  &-subtle {
+    @include button-variant-subtle(
+      var(--button-subtle-background-enabled),
+      var(--button-subtle-text-enabled),
+      var(--button-subtle-border-enabled),
+      var(--button-subtle-background-hover),
+      var(--button-subtle-text-hover),
+      var(--button-subtle-border-hover),
+      var(--button-subtle-background-pressed),
+      var(--button-subtle-text-pressed),
+      var(--button-subtle-border-pressed)
+    );
+    
+    &:disabled {
+      background-color: var(--button-subtle-background-disabled);
+      color: var(--button-subtle-text-disabled);
+      border-color: var(--button-subtle-border-disabled);
+    }
+    
+    &.btn-neutral {
+      @include button-variant-subtle(
+        var(--button-subtle-background-neutral-enabled),
+        var(--button-subtle-text-neutral-enabled),
+        var(--button-subtle-border-neutral-enabled),
+        var(--button-subtle-background-neutral-hover),
+        var(--button-subtle-text-neutral-hover),
+        var(--button-subtle-border-neutral-hover),
+        var(--button-subtle-background-neutral-pressed),
+        var(--button-subtle-text-neutral-pressed),
+        var(--button-subtle-border-neutral-pressed)
+      );
+    }
+    
+    &.btn-negative {
+      @include button-variant-subtle(
+        var(--button-subtle-background-destructive-enabled),
+        var(--button-subtle-text-destructive-enabled),
+        var(--button-subtle-border-destructive-enabled),
+        var(--button-subtle-background-destructive-hover),
+        var(--button-subtle-text-destructive-hover),
+        var(--button-subtle-border-destructive-hover),
+        var(--button-subtle-background-destructive-pressed),
+        var(--button-subtle-text-destructive-pressed),
+        var(--button-subtle-border-destructive-pressed)
+      );
+    }
+    
+    &.btn-inverted {
+      @include button-variant-subtle(
+        var(--button-subtle-background-inverted-enabled),
+        var(--button-subtle-text-inverted),
+        var(--button-subtle-border-inverted-enabled),
+        var(--button-subtle-background-inverted-hover),
+        var(--button-subtle-text-inverted),
+        var(--button-subtle-border-inverted-hover),
+        var(--button-subtle-background-inverted-pressed),
+        var(--button-subtle-text-inverted),
+        var(--button-subtle-border-inverted-pressed)
+      );
+    }
+    
+    &.btn-quiet {
+      border-color: transparent;
+    }
+  }
+  
+  /* TOGGLE VARIANT */
+  &-toggle {
+    background-color: var(--button-toggle-background-enabled);
+    color: var(--button-toggle-content-enabled);
+    border-color: var(--button-toggle-border-enabled);
+    
+    &:hover:not(:disabled) {
+      background-color: var(--button-toggle-background-hover);
+      color: var(--button-toggle-content-hover);
+      border-color: var(--button-toggle-border-hover);
+    }
+    
+    &:active:not(:disabled) {
+      background-color: var(--button-toggle-background-pressed);
+      color: var(--button-toggle-content-pressed);
+      border-color: var(--button-toggle-border-pressed);
+    }
+    
+    &:disabled {
+      background-color: var(--button-toggle-background-disabled);
+      color: var(--button-toggle-content-disabled);
+      border-color: var(--button-toggle-border-disabled);
+    }
+    
+    &.btn-selected {
+      background-color: var(--button-toggle-background-selected-enabled);
+      color: var(--button-toggle-content-selected-enabled);
+      border-color: transparent;
+      
+      &:hover:not(:disabled) {
+        background-color: var(--button-toggle-background-selected-hover);
+        color: var(--button-toggle-content-selected-hover);
+      }
+      
+      &:active:not(:disabled) {
+        background-color: var(--button-toggle-background-selected-pressed);
+        color: var(--button-toggle-content-selected-pressed);
+      }
+    }
+  }
+  
+  /* LOADING STATE */
+  &-loading {
+    pointer-events: none;
+    position: relative;
+  }
+  
+  &-spinner {
+    animation: btn-spin 1s linear infinite;
+  }
+  
+  /* FULL WIDTH */
+  &-full-width {
+    width: 100%;
+  }
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+@keyframes btn-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ============================================
+   HIGH CONTRAST MODE
+   ============================================ */
+
+@media (prefers-contrast: high) {
+  .btn:disabled {
+    background-color: var(--high-contrast-disabled) !important;
+    color: var(--text-neutral-strong) !important;
+    border-color: var(--high-contrast-disabled) !important;
+  }
+}
+

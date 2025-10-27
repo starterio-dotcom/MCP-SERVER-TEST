@@ -1,0 +1,334 @@
+/**
+ * Design System Component Tokens - DÁP Design System UI Kit 1.2
+ * Komponens-specifikus tokenek SCSS formátumban
+ * Az export.json alapján generálva, foundation tokenekkel összekapcsolva
+ */
+
+// ============================================
+// BUTTON PRIMARY
+// ============================================
+
+// Background states
+$button-primary-background-enabled: var(--color-brand-1000, #4258ed) !default;
+$button-primary-background-hover: var(--color-brand-1100, #3547d1) !default;
+$button-primary-background-pressed: var(--color-brand-1200, #2a38b5) !default;
+$button-primary-background-disabled: var(--neutral-700, #d4d9e0) !default;
+
+// Inverted backgrounds
+$button-primary-background-inverted-enabled: var(--color-brand-100, #f0f2fe) !default;
+$button-primary-background-inverted-hover: var(--color-brand-300, #d4dafc) !default;
+$button-primary-background-inverted-pressed: var(--color-brand-400, #c1c9fb) !default;
+
+// Destructive backgrounds
+$button-primary-background-destructive-enabled: var(--semantic-red-1000, #d40d00) !default;
+$button-primary-background-destructive-hover: var(--semantic-red-1100, #be0c00) !default;
+$button-primary-background-destructive-pressed: var(--semantic-red-1200, #ab0b00) !default;
+
+// Text colors
+$button-primary-text-enabled: var(--white-100, #ffffff) !default;
+$button-primary-text-inverted: var(--color-brand-1000, #4258ed) !default;
+$button-primary-text-disabled: var(--neutral-100, #ffffff) !default;
+
+// Icon colors
+$button-primary-icon-enabled: var(--white-100, #ffffff) !default;
+$button-primary-icon-inverted: var(--color-brand-1000, #4258ed) !default;
+$button-primary-icon-disabled: var(--neutral-100, #ffffff) !default;
+
+// ============================================
+// BUTTON OUTLINE
+// ============================================
+
+// Border states
+$button-outline-border-enabled: var(--color-brand-1000, #4258ed) !default;
+$button-outline-border-hover: var(--color-brand-1100, #3547d1) !default;
+$button-outline-border-pressed: var(--color-brand-1200, #2a38b5) !default;
+$button-outline-border-disabled: var(--neutral-900, #e9edf2) !default;
+
+// Destructive borders
+$button-outline-border-destructive-enabled: var(--semantic-red-1000, #d40d00) !default;
+$button-outline-border-destructive-hover: var(--semantic-red-1100, #be0c00) !default;
+$button-outline-border-destructive-pressed: var(--semantic-red-1200, #ab0b00) !default;
+
+// Text colors
+$button-outline-text-enabled: var(--color-brand-1000, #4258ed) !default;
+$button-outline-text-hover: var(--color-brand-1100, #3547d1) !default;
+$button-outline-text-pressed: var(--color-brand-1200, #2a38b5) !default;
+$button-outline-text-disabled: var(--neutral-900, #e9edf2) !default;
+
+// ============================================
+// BUTTON SUBTLE
+// ============================================
+
+$button-subtle-background-enabled: transparent !default;
+$button-subtle-background-hover: var(--color-brand-100, #f0f2fe) !default;
+$button-subtle-background-pressed: var(--color-brand-200, #e3e7fd) !default;
+$button-subtle-background-disabled: transparent !default;
+
+$button-subtle-text-enabled: var(--color-brand-1000, #4258ed) !default;
+$button-subtle-text-hover: var(--color-brand-1100, #3547d1) !default;
+$button-subtle-text-pressed: var(--color-brand-1200, #2a38b5) !default;
+$button-subtle-text-disabled: var(--neutral-900, #e9edf2) !default;
+
+// ============================================
+// BANNER
+// ============================================
+
+$banner-background-brand: var(--color-brand-1000, #4258ed) !default;
+$banner-background-positive: var(--semantic-green-1000, #007b24) !default;
+$banner-background-informative: var(--semantic-blue-1000, #006faa) !default;
+$banner-background-warning: var(--semantic-orange-500, #eb7800) !default;
+$banner-background-negative: var(--semantic-red-1000, #d40d00) !default;
+
+$banner-text-brand: var(--white-100, #ffffff) !default;
+$banner-text-positive: var(--white-100, #ffffff) !default;
+$banner-text-warning: var(--neutral-2000, #131722) !default;
+$banner-text-negative: var(--white-100, #ffffff) !default;
+
+// ============================================
+// LINK
+// ============================================
+
+$link-enabled: var(--color-brand-1000, #4258ed) !default;
+$link-hover: var(--color-brand-1100, #3547d1) !default;
+$link-pressed: var(--color-brand-1200, #2a38b5) !default;
+$link-visited: var(--color-brand-1200, #2a38b5) !default;
+
+// ============================================
+// FORM FIELDS
+// ============================================
+
+$field-background-default: var(--white-100, #ffffff) !default;
+$field-background-hover: var(--neutral-100, #f7f9fb) !default;
+$field-background-focused: var(--white-100, #ffffff) !default;
+$field-background-disabled: var(--neutral-300, #f0f2f5) !default;
+$field-background-readonly: var(--neutral-200, #f3f6f8) !default;
+
+// ============================================
+// MIXINS
+// ============================================
+
+@mixin button-primary {
+  background: $button-primary-background-enabled;
+  color: $button-primary-text-enabled;
+  border: none;
+  border-radius: var(--border-radius-small);
+  padding: var(--spacing-200) var(--spacing-400);
+  font-weight: var(--font-weight-bold);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: var(--elevation-100);
+  
+  &:hover {
+    background: $button-primary-background-hover;
+    box-shadow: var(--elevation-200);
+  }
+  
+  &:active {
+    background: $button-primary-background-pressed;
+    box-shadow: var(--elevation-100);
+  }
+  
+  &:disabled {
+    background: $button-primary-background-disabled;
+    color: $button-primary-text-disabled;
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+  
+  &.destructive {
+    background: $button-primary-background-destructive-enabled;
+    
+    &:hover {
+      background: $button-primary-background-destructive-hover;
+    }
+    
+    &:active {
+      background: $button-primary-background-destructive-pressed;
+    }
+  }
+  
+  &.inverted {
+    background: $button-primary-background-inverted-enabled;
+    color: $button-primary-text-inverted;
+    
+    &:hover {
+      background: $button-primary-background-inverted-hover;
+    }
+    
+    &:active {
+      background: $button-primary-background-inverted-pressed;
+    }
+  }
+}
+
+@mixin button-outline {
+  background: transparent;
+  color: $button-outline-text-enabled;
+  border: var(--border-width-base) solid $button-outline-border-enabled;
+  border-radius: var(--border-radius-small);
+  padding: var(--spacing-200) var(--spacing-400);
+  font-weight: var(--font-weight-bold);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    border-color: $button-outline-border-hover;
+    color: $button-outline-text-hover;
+    background: var(--color-brand-alpha-5);
+  }
+  
+  &:active {
+    border-color: $button-outline-border-pressed;
+    color: $button-outline-text-pressed;
+  }
+  
+  &:disabled {
+    border-color: $button-outline-border-disabled;
+    color: $button-outline-text-disabled;
+    cursor: not-allowed;
+  }
+}
+
+@mixin button-subtle {
+  background: $button-subtle-background-enabled;
+  color: $button-subtle-text-enabled;
+  border: none;
+  border-radius: var(--border-radius-small);
+  padding: var(--spacing-200) var(--spacing-400);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    background: $button-subtle-background-hover;
+    color: $button-subtle-text-hover;
+  }
+  
+  &:active {
+    background: $button-subtle-background-pressed;
+    color: $button-subtle-text-pressed;
+  }
+}
+
+@mixin banner($type: 'brand') {
+  padding: var(--spacing-400) var(--spacing-600);
+  border-radius: var(--border-radius-small);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-300);
+  
+  @if $type == 'brand' {
+    background: $banner-background-brand;
+    color: $banner-text-brand;
+  } @else if $type == 'positive' {
+    background: $banner-background-positive;
+    color: $banner-text-positive;
+  } @else if $type == 'warning' {
+    background: $banner-background-warning;
+    color: $banner-text-warning;
+  } @else if $type == 'negative' {
+    background: $banner-background-negative;
+    color: $banner-text-negative;
+  } @else if $type == 'informative' {
+    background: $banner-background-informative;
+    color: $banner-text-brand;
+  }
+}
+
+@mixin link($variant: 'default') {
+  color: $link-enabled;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  
+  &:hover {
+    color: $link-hover;
+  }
+  
+  &:active {
+    color: $link-pressed;
+  }
+  
+  &:visited {
+    color: $link-visited;
+  }
+}
+
+@mixin form-field {
+  background: $field-background-default;
+  border: var(--border-width-base) solid var(--border-color-neutral-base);
+  border-radius: var(--border-radius-small);
+  padding: var(--spacing-200) var(--spacing-300);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-base);
+  transition: all 0.2s ease;
+  
+  &:hover {
+    background: $field-background-hover;
+  }
+  
+  &:focus {
+    background: $field-background-focused;
+    border-color: var(--border-color-brand-base);
+    outline: none;
+    box-shadow: 0 0 0 3px var(--color-brand-alpha-10);
+  }
+  
+  &:disabled {
+    background: $field-background-disabled;
+    cursor: not-allowed;
+  }
+  
+  &[readonly] {
+    background: $field-background-readonly;
+  }
+  
+  &.error {
+    border-color: var(--border-color-negative-base);
+    
+    &:focus {
+      box-shadow: 0 0 0 3px var(--semantic-red-alpha-10);
+    }
+  }
+}
+
+// ============================================
+// USAGE EXAMPLES
+// ============================================
+
+/*
+// Button Primary
+.my-button {
+  @include button-primary;
+}
+
+// Button Outline
+.my-outline-btn {
+  @include button-outline;
+}
+
+// Button Subtle
+.my-subtle-btn {
+  @include button-subtle;
+}
+
+// Banner
+.success-banner {
+  @include banner('positive');
+}
+
+.warning-banner {
+  @include banner('warning');
+}
+
+// Link
+.my-link {
+  @include link;
+}
+
+// Form Field
+.my-input {
+  @include form-field;
+}
+*/
+

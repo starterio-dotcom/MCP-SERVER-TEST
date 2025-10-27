@@ -1,0 +1,413 @@
+/**
+ * Design System Component Tokens - DÁP Design System UI Kit 1.2
+ * Komponens-specifikus tokenek
+ * Az export.json alapján generálva, foundation tokenekkel összekapcsolva
+ */
+
+/* ============================================
+   BUTTON PRIMARY
+   ============================================ */
+
+:root {
+  /* Background states */
+  --button-primary-background-enabled: var(--color-brand-1000, #4258ed);
+  --button-primary-background-hover: var(--color-brand-1100, #3547d1);
+  --button-primary-background-pressed: var(--color-brand-1200, #2a38b5);
+  --button-primary-background-disabled: var(--neutral-700, #d4d9e0);
+  
+  /* Inverted backgrounds */
+  --button-primary-background-inverted-enabled: var(--color-brand-100, #f0f2fe);
+  --button-primary-background-inverted-hover: var(--color-brand-300, #d4dafc);
+  --button-primary-background-inverted-pressed: var(--color-brand-400, #c1c9fb);
+  
+  /* Destructive backgrounds */
+  --button-primary-background-destructive-enabled: var(--semantic-red-1000, #d40d00);
+  --button-primary-background-destructive-hover: var(--semantic-red-1100, #be0c00);
+  --button-primary-background-destructive-pressed: var(--semantic-red-1200, #ab0b00);
+  
+  /* Text colors */
+  --button-primary-text-enabled: var(--white-100, #ffffff);
+  --button-primary-text-inverted: var(--color-brand-1000, #4258ed);
+  --button-primary-text-disabled: var(--neutral-100, #ffffff);
+  
+  /* Icon colors */
+  --button-primary-icon-enabled: var(--white-100, #ffffff);
+  --button-primary-icon-inverted: var(--color-brand-1000, #4258ed);
+  --button-primary-icon-disabled: var(--neutral-100, #ffffff);
+}
+
+/* ============================================
+   BUTTON OUTLINE
+   ============================================ */
+
+:root {
+  /* Border states */
+  --button-outline-border-enabled: var(--color-brand-1000, #4258ed);
+  --button-outline-border-hover: var(--color-brand-1100, #3547d1);
+  --button-outline-border-pressed: var(--color-brand-1200, #2a38b5);
+  --button-outline-border-disabled: var(--neutral-900, #e9edf2);
+  
+  /* Destructive borders */
+  --button-outline-border-destructive-enabled: var(--semantic-red-1000, #d40d00);
+  --button-outline-border-destructive-hover: var(--semantic-red-1100, #be0c00);
+  --button-outline-border-destructive-pressed: var(--semantic-red-1200, #ab0b00);
+  
+  /* Inverted borders */
+  --button-outline-border-inverted-enabled: var(--color-brand-100, #f0f2fe);
+  --button-outline-border-inverted-hover: var(--color-brand-300, #d4dafc);
+  --button-outline-border-inverted-pressed: var(--color-brand-400, #c1c9fb);
+  
+  /* Text colors */
+  --button-outline-text-enabled: var(--color-brand-1000, #4258ed);
+  --button-outline-text-hover: var(--color-brand-1100, #3547d1);
+  --button-outline-text-pressed: var(--color-brand-1200, #2a38b5);
+  --button-outline-text-disabled: var(--neutral-900, #e9edf2);
+  --button-outline-text-destructive-enabled: var(--semantic-red-1000, #d40d00);
+  --button-outline-text-inverted-enabled: var(--color-brand-100, #f0f2fe);
+  
+  /* Icon colors */
+  --button-outline-icon-enabled: var(--color-brand-1000, #4258ed);
+  --button-outline-icon-disabled: var(--neutral-900, #e9edf2);
+}
+
+/* ============================================
+   BUTTON SUBTLE
+   ============================================ */
+
+:root {
+  /* Background states */
+  --button-subtle-background-enabled: transparent;
+  --button-subtle-background-hover: var(--color-brand-100, #f0f2fe);
+  --button-subtle-background-pressed: var(--color-brand-200, #e3e7fd);
+  --button-subtle-background-disabled: transparent;
+  
+  /* Text colors */
+  --button-subtle-text-enabled: var(--color-brand-1000, #4258ed);
+  --button-subtle-text-hover: var(--color-brand-1100, #3547d1);
+  --button-subtle-text-pressed: var(--color-brand-1200, #2a38b5);
+  --button-subtle-text-disabled: var(--neutral-900, #e9edf2);
+  
+  /* Icon colors */
+  --button-subtle-icon-enabled: var(--color-brand-1000, #4258ed);
+  --button-subtle-icon-disabled: var(--neutral-900, #e9edf2);
+}
+
+/* ============================================
+   BUTTON TOGGLE
+   ============================================ */
+
+:root {
+  /* Background states */
+  --button-toggle-background-off: transparent;
+  --button-toggle-background-on: var(--color-brand-100, #f0f2fe);
+  --button-toggle-background-on-hover: var(--color-brand-200, #e3e7fd);
+  
+  /* Border states */
+  --button-toggle-border-off: var(--neutral-900, #e9edf2);
+  --button-toggle-border-on: var(--color-brand-1000, #4258ed);
+  
+  /* Content colors */
+  --button-toggle-content-off: var(--neutral-1600, #404753);
+  --button-toggle-content-on: var(--color-brand-1000, #4258ed);
+}
+
+/* ============================================
+   BANNER
+   ============================================ */
+
+:root {
+  /* Background colors by type */
+  --banner-background-brand: var(--color-brand-1000, #4258ed);
+  --banner-background-positive: var(--semantic-green-1000, #007b24);
+  --banner-background-informative: var(--semantic-blue-1000, #006faa);
+  --banner-background-warning: var(--semantic-orange-500, #eb7800);
+  --banner-background-negative: var(--semantic-red-1000, #d40d00);
+  
+  /* Text colors */
+  --banner-text-brand: var(--white-100, #ffffff);
+  --banner-text-positive: var(--white-100, #ffffff);
+  --banner-text-informative: var(--white-100, #ffffff);
+  --banner-text-warning: var(--neutral-2000, #131722);
+  --banner-text-negative: var(--white-100, #ffffff);
+  
+  /* Icon colors */
+  --banner-icon-brand: var(--white-100, #ffffff);
+  --banner-icon-positive: var(--white-100, #ffffff);
+  --banner-icon-informative: var(--white-100, #ffffff);
+  --banner-icon-warning: var(--neutral-2000, #131722);
+  --banner-icon-negative: var(--white-100, #ffffff);
+  
+  /* Action (button) colors */
+  --banner-action-brand: var(--white-100, #ffffff);
+  --banner-action-positive: var(--white-100, #ffffff);
+  --banner-action-informative: var(--white-100, #ffffff);
+  --banner-action-warning: var(--neutral-2000, #131722);
+  --banner-action-negative: var(--white-100, #ffffff);
+}
+
+/* ============================================
+   LINK
+   ============================================ */
+
+:root {
+  /* Primary links */
+  --link-enabled: var(--color-brand-1000, #4258ed);
+  --link-hover: var(--color-brand-1100, #3547d1);
+  --link-pressed: var(--color-brand-1200, #2a38b5);
+  --link-visited: var(--color-brand-1200, #2a38b5);
+  
+  /* Inverted links */
+  --link-inverted-enabled: var(--color-brand-100, #f0f2fe);
+  --link-inverted-hover: var(--color-brand-200, #e3e7fd);
+  --link-inverted-pressed: var(--color-brand-300, #d4dafc);
+  --link-inverted-visited: var(--color-brand-300, #d4dafc);
+  
+  /* Neutral links */
+  --link-neutral-enabled: var(--neutral-1600, #404753);
+  --link-neutral-hover: var(--neutral-1700, #333840);
+  --link-neutral-pressed: var(--neutral-1800, #2a2e38);
+  --link-neutral-visited: var(--neutral-1800, #2a2e38);
+}
+
+/* ============================================
+   FORM FIELDS
+   ============================================ */
+
+:root {
+  /* Field backgrounds */
+  --field-background-default: var(--white-100, #ffffff);
+  --field-background-hover: var(--neutral-100, #f7f9fb);
+  --field-background-focused: var(--white-100, #ffffff);
+  --field-background-disabled: var(--neutral-300, #f0f2f5);
+  --field-background-readonly: var(--neutral-200, #f3f6f8);
+  --field-background-error: var(--white-100, #ffffff);
+}
+
+/* ============================================
+   COMPONENT UTILITY CLASSES
+   ============================================ */
+
+/* Button Primary */
+.btn-primary {
+  background: var(--button-primary-background-enabled);
+  color: var(--button-primary-text-enabled);
+  border: none;
+  border-radius: var(--border-radius-small);
+  padding: var(--spacing-200) var(--spacing-400);
+  font-weight: var(--font-weight-bold);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: var(--elevation-100);
+}
+
+.btn-primary:hover {
+  background: var(--button-primary-background-hover);
+  box-shadow: var(--elevation-200);
+}
+
+.btn-primary:active {
+  background: var(--button-primary-background-pressed);
+  box-shadow: var(--elevation-100);
+}
+
+.btn-primary:disabled {
+  background: var(--button-primary-background-disabled);
+  color: var(--button-primary-text-disabled);
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.btn-primary.destructive {
+  background: var(--button-primary-background-destructive-enabled);
+}
+
+.btn-primary.destructive:hover {
+  background: var(--button-primary-background-destructive-hover);
+}
+
+.btn-primary.destructive:active {
+  background: var(--button-primary-background-destructive-pressed);
+}
+
+.btn-primary.inverted {
+  background: var(--button-primary-background-inverted-enabled);
+  color: var(--button-primary-text-inverted);
+}
+
+/* Button Outline */
+.btn-outline {
+  background: transparent;
+  color: var(--button-outline-text-enabled);
+  border: var(--border-width-base) solid var(--button-outline-border-enabled);
+  border-radius: var(--border-radius-small);
+  padding: var(--spacing-200) var(--spacing-400);
+  font-weight: var(--font-weight-bold);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-outline:hover {
+  border-color: var(--button-outline-border-hover);
+  color: var(--button-outline-text-hover);
+  background: var(--color-brand-alpha-5);
+}
+
+.btn-outline:active {
+  border-color: var(--button-outline-border-pressed);
+  color: var(--button-outline-text-pressed);
+}
+
+.btn-outline:disabled {
+  border-color: var(--button-outline-border-disabled);
+  color: var(--button-outline-text-disabled);
+  cursor: not-allowed;
+}
+
+/* Button Subtle */
+.btn-subtle {
+  background: var(--button-subtle-background-enabled);
+  color: var(--button-subtle-text-enabled);
+  border: none;
+  border-radius: var(--border-radius-small);
+  padding: var(--spacing-200) var(--spacing-400);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-subtle:hover {
+  background: var(--button-subtle-background-hover);
+  color: var(--button-subtle-text-hover);
+}
+
+.btn-subtle:active {
+  background: var(--button-subtle-background-pressed);
+  color: var(--button-subtle-text-pressed);
+}
+
+/* Banner */
+.banner {
+  padding: var(--spacing-400) var(--spacing-600);
+  border-radius: var(--border-radius-small);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-300);
+}
+
+.banner.brand {
+  background: var(--banner-background-brand);
+  color: var(--banner-text-brand);
+}
+
+.banner.positive {
+  background: var(--banner-background-positive);
+  color: var(--banner-text-positive);
+}
+
+.banner.warning {
+  background: var(--banner-background-warning);
+  color: var(--banner-text-warning);
+}
+
+.banner.negative {
+  background: var(--banner-background-negative);
+  color: var(--banner-text-negative);
+}
+
+.banner.informative {
+  background: var(--banner-background-informative);
+  color: var(--banner-text-informative);
+}
+
+/* Link */
+.link {
+  color: var(--link-enabled);
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.link:hover {
+  color: var(--link-hover);
+}
+
+.link:active {
+  color: var(--link-pressed);
+}
+
+.link:visited {
+  color: var(--link-visited);
+}
+
+.link.inverted {
+  color: var(--link-inverted-enabled);
+}
+
+.link.inverted:hover {
+  color: var(--link-inverted-hover);
+}
+
+.link.neutral {
+  color: var(--link-neutral-enabled);
+}
+
+.link.neutral:hover {
+  color: var(--link-neutral-hover);
+}
+
+/* Form Field */
+.field {
+  background: var(--field-background-default);
+  border: var(--border-width-base) solid var(--border-color-neutral-base);
+  border-radius: var(--border-radius-small);
+  padding: var(--spacing-200) var(--spacing-300);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-base);
+  transition: all 0.2s ease;
+}
+
+.field:hover {
+  background: var(--field-background-hover);
+}
+
+.field:focus {
+  background: var(--field-background-focused);
+  border-color: var(--border-color-brand-base);
+  outline: none;
+  box-shadow: 0 0 0 3px var(--color-brand-alpha-10);
+}
+
+.field:disabled {
+  background: var(--field-background-disabled);
+  cursor: not-allowed;
+}
+
+.field[readonly] {
+  background: var(--field-background-readonly);
+}
+
+.field.error {
+  border-color: var(--border-color-negative-base);
+}
+
+.field.error:focus {
+  box-shadow: 0 0 0 3px var(--semantic-red-alpha-10);
+}
+
+/* Usage Examples:
+   
+   <button class="btn-primary">Primary Button</button>
+   <button class="btn-primary destructive">Delete</button>
+   <button class="btn-outline">Outline Button</button>
+   <button class="btn-subtle">Subtle Button</button>
+   
+   <div class="banner positive">Success message!</div>
+   <div class="banner warning">Warning message</div>
+   
+   <a class="link" href="#">Link text</a>
+   <a class="link neutral" href="#">Neutral link</a>
+   
+   <input class="field" type="text" placeholder="Enter text">
+   <input class="field error" type="text" placeholder="Error state">
+*/
+

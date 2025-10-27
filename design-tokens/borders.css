@@ -1,0 +1,79 @@
+/* ================================
+   DÁP Design System - Border Tokens
+   Automatikusan generálva a Figma design rendszerből
+   ================================ */
+
+:root {
+  /* Border Widths */
+  --border-width-base: 1px;
+  --border-width-medium: 2px;
+  --border-width-thick: 3px;
+  
+  /* Border Radius */
+  --radius-none: 0;
+  --radius-small: 4px;
+  --radius-base: 8px;      /* Base radius for buttons and inputs */
+  --radius-medium: 8px;     /* Alias for base */
+  --radius-large: 16px;
+  --radius-rounded: 1000px;
+  
+  /* Border Colors - Neutral */
+  --border-neutral-base: #606b7a;
+  --border-neutral-divider: rgba(0, 0, 0, 0.1);
+  --border-neutral-transparent-interactive: rgba(255, 255, 255, 0);
+  
+  /* Border Colors - Semantic */
+  --border-brand-base: #4258ed;
+  --border-positive-base: #007b24;
+  --border-negative-base: #d40d00;
+  --border-warning-base: #a65200;
+  --border-info-base: #006faa;
+}
+
+/* ================================
+   Border Utility Classes
+   ================================ */
+
+/* Border Widths */
+.border { border-width: var(--border-width-base); }
+.border-2 { border-width: var(--border-width-medium); }
+.border-3 { border-width: var(--border-width-thick); }
+
+/* Border Radius */
+.rounded-none { border-radius: var(--radius-none); }
+.rounded-sm { border-radius: var(--radius-small); }
+.rounded-md { border-radius: var(--radius-medium); }
+.rounded-lg { border-radius: var(--radius-large); }
+.rounded-full { border-radius: var(--radius-rounded); }
+
+/* Border Colors */
+.border-neutral { border-color: var(--border-neutral-base); }
+.border-divider { border-color: var(--border-neutral-divider); }
+.border-brand { border-color: var(--border-brand-base); }
+.border-positive { border-color: var(--border-positive-base); }
+.border-negative { border-color: var(--border-negative-base); }
+.border-warning { border-color: var(--border-warning-base); }
+.border-info { border-color: var(--border-info-base); }
+
+/* Common Border Styles */
+.border-solid { border-style: solid; }
+.border-dashed { border-style: dashed; }
+.border-dotted { border-style: dotted; }
+
+/* Usage Examples:
+   
+   .card {
+     border: var(--border-width-base) solid var(--border-neutral-divider);
+     border-radius: var(--radius-large);
+   }
+   
+   .button {
+     border: var(--border-width-medium) solid var(--border-brand-base);
+     border-radius: var(--radius-small);
+   }
+   
+   .divider {
+     border-top: var(--border-width-base) solid var(--border-neutral-divider);
+   }
+*/
+

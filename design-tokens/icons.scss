@@ -1,0 +1,242 @@
+/**
+ * Design System Icon Tokens - DÁP Design System UI Kit 1.2
+ * Icon méretek, színek és spacing tokenek SCSS formátumban
+ */
+
+// ============================================
+// ICON SIZES
+// ============================================
+
+$icon-size-xs: 12px !default;
+$icon-size-sm: 16px !default;
+$icon-size-md: 20px !default;
+$icon-size-base: $icon-size-md !default;
+$icon-size-lg: 24px !default;
+$icon-size-xl: 32px !default;
+$icon-size-2xl: 48px !default;
+$icon-size-3xl: 64px !default;
+
+// Icon size map
+$icon-sizes: (
+  'xs': $icon-size-xs,
+  'sm': $icon-size-sm,
+  'md': $icon-size-md,
+  'base': $icon-size-base,
+  'lg': $icon-size-lg,
+  'xl': $icon-size-xl,
+  '2xl': $icon-size-2xl,
+  '3xl': $icon-size-3xl,
+);
+
+// ============================================
+// ICON COLORS
+// ============================================
+
+$icon-color-default: var(--neutral-1600, #404753) !default;
+$icon-color-subtle: var(--neutral-1200, #8895a7) !default;
+$icon-color-muted: var(--neutral-900, #e9edf2) !default;
+$icon-color-inverted: var(--white-100, #ffffff) !default;
+
+$icon-color-brand: var(--color-brand-1000, #4258ed) !default;
+$icon-color-brand-hover: var(--color-brand-1100, #3547d1) !default;
+
+$icon-color-positive: var(--semantic-green-1000, #007b24) !default;
+$icon-color-negative: var(--semantic-red-1000, #d40d00) !default;
+$icon-color-warning: var(--semantic-orange-1000, #c25f00) !default;
+$icon-color-info: var(--semantic-blue-1000, #006faa) !default;
+
+$icon-color-interactive: var(--color-brand-1000, #4258ed) !default;
+$icon-color-interactive-hover: var(--color-brand-1100, #3547d1) !default;
+$icon-color-disabled: var(--neutral-900, #e9edf2) !default;
+
+// Icon color map
+$icon-colors: (
+  'default': $icon-color-default,
+  'subtle': $icon-color-subtle,
+  'muted': $icon-color-muted,
+  'inverted': $icon-color-inverted,
+  'brand': $icon-color-brand,
+  'positive': $icon-color-positive,
+  'negative': $icon-color-negative,
+  'warning': $icon-color-warning,
+  'info': $icon-color-info,
+  'disabled': $icon-color-disabled,
+);
+
+// ============================================
+// ICON SPACING
+// ============================================
+
+$icon-spacing-xs: var(--spacing-100, 4px) !default;
+$icon-spacing-sm: var(--spacing-200, 8px) !default;
+$icon-spacing-md: var(--spacing-300, 12px) !default;
+$icon-spacing-lg: var(--spacing-400, 16px) !default;
+
+// ============================================
+// ICON STROKE WIDTH
+// ============================================
+
+$icon-stroke-thin: 1 !default;
+$icon-stroke-regular: 1.5 !default;
+$icon-stroke-medium: 2 !default;
+$icon-stroke-bold: 2.5 !default;
+
+// ============================================
+// MIXINS
+// ============================================
+
+@mixin icon-size($size: 'md') {
+  @if map-has-key($icon-sizes, $size) {
+    width: map-get($icon-sizes, $size);
+    height: map-get($icon-sizes, $size);
+  } @else {
+    @warn "Icon size `#{$size}` not found in $icon-sizes map.";
+  }
+}
+
+@mixin icon-color($color: 'default') {
+  @if map-has-key($icon-colors, $color) {
+    color: map-get($icon-colors, $color);
+  } @else {
+    @warn "Icon color `#{$color}` not found in $icon-colors map.";
+  }
+}
+
+@mixin icon($size: 'md', $color: 'default') {
+  @include icon-size($size);
+  @include icon-color($color);
+  
+  svg {
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
+  }
+}
+
+@mixin icon-outline($size: 'md', $color: 'default', $stroke: 'regular') {
+  @include icon-size($size);
+  @include icon-color($color);
+  
+  svg {
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: currentColor;
+    
+    @if $stroke == 'thin' {
+      stroke-width: $icon-stroke-thin;
+    } @else if $stroke == 'regular' {
+      stroke-width: $icon-stroke-regular;
+    } @else if $stroke == 'medium' {
+      stroke-width: $icon-stroke-medium;
+    } @else if $stroke == 'bold' {
+      stroke-width: $icon-stroke-bold;
+    }
+  }
+}
+
+@mixin icon-with-text($spacing: 'sm') {
+  display: inline-flex;
+  align-items: center;
+  
+  @if $spacing == 'xs' {
+    gap: $icon-spacing-xs;
+  } @else if $spacing == 'sm' {
+    gap: $icon-spacing-sm;
+  } @else if $spacing == 'md' {
+    gap: $icon-spacing-md;
+  } @else if $spacing == 'lg' {
+    gap: $icon-spacing-lg;
+  }
+}
+
+@mixin icon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-200);
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  border-radius: var(--border-radius-small);
+  color: $icon-color-interactive;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    background: var(--color-brand-alpha-10);
+    color: $icon-color-interactive-hover;
+  }
+  
+  &:active {
+    background: var(--color-brand-alpha-20);
+  }
+  
+  &:disabled {
+    color: $icon-color-disabled;
+    cursor: not-allowed;
+    background: transparent;
+  }
+}
+
+@mixin icon-spin {
+  animation: icon-spin 1s linear infinite;
+  
+  @keyframes icon-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+// ============================================
+// USAGE EXAMPLES
+// ============================================
+
+/*
+// Basic icon
+.my-icon {
+  @include icon('md', 'brand');
+}
+
+// Outline icon
+.my-outline-icon {
+  @include icon-outline('lg', 'positive', 'medium');
+}
+
+// Icon with text
+.my-button {
+  @include icon-with-text('md');
+  
+  .icon {
+    @include icon('md', 'inverted');
+  }
+}
+
+// Icon button
+.my-icon-button {
+  @include icon-button;
+  
+  .icon {
+    @include icon('md');
+  }
+}
+
+// Spinning loader icon
+.loader {
+  @include icon('xl', 'brand');
+  @include icon-spin;
+}
+
+// Responsive icon
+.responsive-icon {
+  @include icon('md', 'default');
+  
+  @media (min-width: 768px) {
+    @include icon-size('lg');
+  }
+}
+*/
+

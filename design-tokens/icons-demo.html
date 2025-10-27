@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Icon Tokens Demo - DÁP Design System</title>
+    <link rel="stylesheet" href="colors.css">
+    <link rel="stylesheet" href="spacing.css">
+    <link rel="stylesheet" href="borders.css">
+    <link rel="stylesheet" href="icons.css">
+    <link rel="stylesheet" href="components.css">
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: var(--spacing-600);
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: white;
+            text-align: center;
+            margin-bottom: var(--spacing-1200);
+            font-size: 2.5rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .section {
+            background: white;
+            border-radius: var(--border-radius-large);
+            padding: var(--spacing-600);
+            margin-bottom: var(--spacing-600);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-400);
+            color: var(--neutral-1800);
+        }
+
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: var(--spacing-400);
+        }
+
+        .demo-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--spacing-200);
+            padding: var(--spacing-300);
+            border: 1px solid var(--neutral-300);
+            border-radius: var(--border-radius-small);
+        }
+
+        .demo-label {
+            font-size: 0.75rem;
+            color: var(--neutral-1200);
+            text-align: center;
+        }
+
+        code {
+            background: var(--neutral-200);
+            padding: 2px 6px;
+            border-radius: var(--border-radius-small);
+            font-family: 'Monaco', monospace;
+            font-size: 0.75rem;
+        }
+
+        .button-group {
+            display: flex;
+            gap: var(--spacing-300);
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+    <!-- SVG Icon Sprite -->
+    <svg style="display: none;">
+        <!-- Plus Icon -->
+        <symbol id="icon-plus" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+        </symbol>
+        
+        <!-- Trash Icon -->
+        <symbol id="icon-trash" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
+        </symbol>
+        
+        <!-- Check Icon -->
+        <symbol id="icon-check" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+        </symbol>
+        
+        <!-- X Icon -->
+        <symbol id="icon-x" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </symbol>
+        
+        <!-- Heart Icon -->
+        <symbol id="icon-heart" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+        </symbol>
+        
+        <!-- Loader Icon -->
+        <symbol id="icon-loader" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
+        </symbol>
+        
+        <!-- Info Icon -->
+        <symbol id="icon-info" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
+        </symbol>
+        
+        <!-- Warning Icon -->
+        <symbol id="icon-warning" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+        </symbol>
+    </svg>
+
+    <div class="container">
+        <h1>🎨 Icon Tokens Demo</h1>
+
+        <!-- Icon Sizes -->
+        <div class="section">
+            <h2 class="section-title">Icon Méretek</h2>
+            <div class="demo-grid">
+                <div class="demo-item">
+                    <svg class="icon-xs icon-outline icon-brand">
+                        <use href="#icon-heart"/>
+                    </svg>
+                    <div class="demo-label">xs - 12px<br><code>.icon-xs</code></div>
+                </div>
+                
+                <div class="demo-item">
+                    <svg class="icon-sm icon-outline icon-brand">
+                        <use href="#icon-heart"/>
+                    </svg>
+                    <div class="demo-label">sm - 16px<br><code>.icon-sm</code></div>
+                </div>
+                
+                <div class="demo-item">
+                    <svg class="icon-md icon-outline icon-brand">
+                        <use href="#icon-heart"/>
+                    </svg>
+                    <div class="demo-label">md - 20px<br><code>.icon-md</code></div>
+                </div>
+                
+                <div class="demo-item">
+                    <svg class="icon-lg icon-outline icon-brand">
+                        <use href="#icon-heart"/>
+                    </svg>
+                    <div class="demo-label">lg - 24px<br><code>.icon-lg</code></div>
+                </div>
+                
+                <div class="demo-item">
+                    <svg class="icon-xl icon-outline icon-brand">
+                        <use href="#icon-heart"/>
+                    </svg>
+                    <div class="demo-label">xl - 32px<br><code>.icon-xl</code></div>
+                </div>
+                
+                <div class="demo-item">
+                    <svg class="icon-2xl icon-outline icon-brand">
+                        <use href="#icon-heart"/>
+                    </svg>
+                    <div class="demo-label">2xl - 48px<br><code>.icon-2xl</code></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Icon Colors -->
+        <div class="section">
+            <h2 class="section-title">Icon Színek</h2>
+            <div class="demo-grid">
+                <div class="demo-item">
+                    <svg class="icon-lg icon-outline icon-default">
+                        <use href="#icon-check"/>
+                    </svg>
+                    <div class="demo-label">Default<br><code>.icon-default</code></div>
+                </div>
+                
+                <div class="demo-item">
+                    <svg class="icon-lg icon-outline icon-brand">
+                        <use href="#icon-check"/>
+                    </svg>
+                    <div class="demo-label">Brand<br><code>.icon-brand</code></div>
+                </div>
+                
+                <div class="demo-item">
+                    <svg class="icon-lg icon-outline icon-positive">
+                        <use href="#icon-check"/>
+                    </svg>
+                    <div class="demo-label">Positive<br><code>.icon-positive</code></div>
+                </div>
+                
+                <div class="demo-item">
+                    <svg class="icon-lg icon-outline icon-negative">
+                        <use href="#icon-x"/>
+                    </svg>
+                    <div class="demo-label">Negative<br><code>.icon-negative</code></div>
+                </div>
+                
+                <div class="demo-item">
+                    <svg class="icon-lg icon-outline icon-warning">
+                        <use href="#icon-warning"/>
+                    </svg>
+                    <div class="demo-label">Warning<br><code>.icon-warning</code></div>
+                </div>
+                
+                <div class="demo-item">
+                    <svg class="icon-lg icon-outline icon-info">
+                        <use href="#icon-info"/>
+                    </svg>
+                    <div class="demo-label">Info<br><code>.icon-info</code></div>
+                </div>
+                
+                <div class="demo-item" style="background: #4258ed;">
+                    <svg class="icon-lg icon-outline icon-inverted">
+                        <use href="#icon-check"/>
+                    </svg>
+                    <div class="demo-label" style="color: white;">Inverted<br><code>.icon-inverted</code></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Icon with Text -->
+        <div class="section">
+            <h2 class="section-title">Icon + Text</h2>
+            <div style="display: flex; flex-direction: column; gap: 16px;">
+                <button class="btn-primary">
+                    <svg class="icon-md icon-outline icon-inverted">
+                        <use href="#icon-plus"/>
+                    </svg>
+                    <span>Add Item</span>
+                </button>
+                
+                <button class="btn-outline">
+                    <svg class="icon-md icon-outline icon-brand">
+                        <use href="#icon-trash"/>
+                    </svg>
+                    <span>Delete</span>
+                </button>
+                
+                <div class="icon-with-text" style="color: var(--icon-color-positive);">
+                    <svg class="icon-md icon-outline icon-positive">
+                        <use href="#icon-check"/>
+                    </svg>
+                    <span>Success message!</span>
+                </div>
+                
+                <div class="icon-with-text" style="color: var(--icon-color-negative);">
+                    <svg class="icon-md icon-outline icon-negative">
+                        <use href="#icon-x"/>
+                    </svg>
+                    <span>Error message!</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Icon Buttons -->
+        <div class="section">
+            <h2 class="section-title">Icon Buttons</h2>
+            <div class="button-group">
+                <button class="icon-btn" aria-label="Add">
+                    <svg class="icon-md icon-outline">
+                        <use href="#icon-plus"/>
+                    </svg>
+                </button>
+                
+                <button class="icon-btn" aria-label="Delete">
+                    <svg class="icon-md icon-outline">
+                        <use href="#icon-trash"/>
+                    </svg>
+                </button>
+                
+                <button class="icon-btn" aria-label="Like">
+                    <svg class="icon-md icon-outline">
+                        <use href="#icon-heart"/>
+                    </svg>
+                </button>
+                
+                <button class="icon-btn" aria-label="Info">
+                    <svg class="icon-md icon-outline">
+                        <use href="#icon-info"/>
+                    </svg>
+                </button>
+                
+                <button class="icon-btn" disabled aria-label="Disabled">
+                    <svg class="icon-md icon-outline">
+                        <use href="#icon-check"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Loading Spinner -->
+        <div class="section">
+            <h2 class="section-title">Loading Spinner</h2>
+            <div class="demo-grid">
+                <div class="demo-item">
+                    <svg class="icon-lg icon-outline icon-brand icon-spin">
+                        <use href="#icon-loader"/>
+                    </svg>
+                    <div class="demo-label">Loading...<br><code>.icon-spin</code></div>
+                </div>
+                
+                <div class="demo-item">
+                    <svg class="icon-2xl icon-outline icon-brand icon-spin">
+                        <use href="#icon-loader"/>
+                    </svg>
+                    <div class="demo-label">Large Loader</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div style="margin-top: 80px; text-align: center; color: white;">
+            <p style="font-size: 0.875rem; opacity: 0.9;">
+                🎨 DÁP Design System UI Kit 1.2 - Icon Tokens Demo
+            </p>
+            <p style="font-size: 0.75rem; opacity: 0.7;">
+                SVG Icons + Design System Tokens
+            </p>
+        </div>
+    </div>
+</body>
+</html>
+
