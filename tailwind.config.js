@@ -1,0 +1,592 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    './**/*.{html,js,jsx,ts,tsx,vue}',
+    './design-tokens/**/*.{html,js,jsx,ts,tsx,vue}',
+  ],
+  theme: {
+    extend: {
+      colors: {
+        // Text Colors
+        'text-neutral-inverted': '#ffffff',
+        'text-neutral-strong': '#1c1f26',
+        'text-neutral-subtle': '#606b7a',
+        'text-neutral-on-inverted': '#ffffff',
+        
+        // Background Colors
+        'background-brand-base-inverted': '#4258ed',
+        'background-neutral-strong': '#e9edf2',
+
+        // Semantic Green
+        'semantic-green': {
+          100: '#f0fff8',
+          200: '#e5fff3',
+          300: '#dbffef',
+          400: '#22f18f',
+          500: '#00dd72',
+          600: '#00d164',
+          700: '#00bf53',
+          800: '#009b37',
+          900: '#00872a',
+          1000: '#007b24',
+          1100: '#005012',
+          1200: '#00430d',
+          1300: '#00390a',
+          1400: '#003408',
+          1500: '#002f07',
+          1600: '#002d06',
+          1700: '#002905',
+          1800: '#002304',
+          1900: '#002103',
+          2000: '#001a02',
+        },
+
+        // Semantic Green Alpha
+        'semantic-green-alpha': {
+          5: '#007b240d',
+          10: '#007b241a',
+          20: '#007b2433',
+          30: '#007b244d',
+          40: '#007b2466',
+          50: '#007b2480',
+          60: '#007b2499',
+          70: '#007b24b2',
+          80: '#007b24cc',
+          90: '#007b24e5',
+          100: '#007b24',
+        },
+
+        // Semantic Blue
+        'semantic-blue': {
+          100: '#f0f8fe',
+          200: '#e8f4fd',
+          300: '#dceffd',
+          400: '#acdafc',
+          500: '#86c9f7',
+          600: '#70bef3',
+          700: '#51aeeb',
+          800: '#068ed0',
+          900: '#007ab9',
+          1000: '#006faa',
+          1100: '#004773',
+          1200: '#003b62',
+          1300: '#003255',
+          1400: '#002e4e',
+          1500: '#002a48',
+          1600: '#002844',
+          1700: '#00233e',
+          1800: '#001e36',
+          1900: '#001c33',
+          2000: '#00162a',
+        },
+
+        // Semantic Blue Alpha
+        'semantic-blue-alpha': {
+          5: '#006faa0d',
+          10: '#006faa1a',
+          20: '#006faa33',
+          30: '#006faa4d',
+          40: '#006faa66',
+          50: '#006faa80',
+          60: '#006faa99',
+          70: '#006faab2',
+          80: '#006faacc',
+          90: '#006faae5',
+          100: '#006faa',
+        },
+
+        // Semantic Orange
+        'semantic-orange': {
+          100: '#fff6ec',
+          200: '#fff4e5',
+          300: '#ffefdb',
+          400: '#ffca89',
+          500: '#ffb156',
+          600: '#ffa034',
+          700: '#f98900',
+          800: '#d06b00',
+          900: '#b65b00',
+          1000: '#a65200',
+          1100: '#6f3300',
+          1200: '#5e2a00',
+          1300: '#512300',
+          1400: '#4a2000',
+          1500: '#441d00',
+          1600: '#411b00',
+          1700: '#3b1800',
+          1800: '#341400',
+          1900: '#301300',
+          2000: '#270e00',
+        },
+
+        // Semantic Orange Alpha
+        'semantic-orange-alpha': {
+          5: '#a652000d',
+          10: '#a652001a',
+          20: '#a6520033',
+          30: '#a652004d',
+          40: '#a6520066',
+          50: '#a6520080',
+          60: '#a6520099',
+          70: '#a65200b2',
+          80: '#a65200cc',
+          90: '#a65200e5',
+          100: '#a65200',
+        },
+
+        // Semantic Red
+        'semantic-red': {
+          100: '#fff5f2',
+          200: '#ffede9',
+          300: '#ffe6df',
+          400: '#ffc6b8',
+          500: '#ffad99',
+          600: '#ff9c86',
+          700: '#ff8169',
+          800: '#f84227',
+          900: '#e32100',
+          1000: '#d40d00',
+          1100: '#8e0000',
+          1200: '#790000',
+          1300: '#680000',
+          1400: '#600000',
+          1500: '#590000',
+          1600: '#550000',
+          1700: '#4d0000',
+          1800: '#440000',
+          1900: '#400000',
+          2000: '#340000',
+        },
+
+        // Semantic Red Alpha
+        'semantic-red-alpha': {
+          5: '#d40d000d',
+          10: '#d40d001a',
+          20: '#d40d0033',
+          30: '#d40d004d',
+          40: '#d40d0066',
+          50: '#d40d0080',
+          60: '#d40d0099',
+          70: '#d40d00b2',
+          80: '#d40d00cc',
+          90: '#d40d00e5',
+          100: '#d40d00',
+        },
+
+        // Cold Grey
+        'cold-grey': {
+          100: '#f5f7fa',
+          200: '#eef2f6',
+          300: '#e9edf2',
+          400: '#d1d7df',
+          500: '#bfc6d1',
+          600: '#b2b9c6',
+          700: '#a3abba',
+          800: '#7e8797',
+          900: '#707a8a',
+          1000: '#606b7a',
+          1100: '#404753',
+          1200: '#353b46',
+          1300: '#2b3039',
+          1400: '#282c35',
+          1500: '#242830',
+          1600: '#20242c',
+          1700: '#1c1f26',
+          1800: '#181b22',
+          1900: '#15181f',
+          2000: '#0f1115',
+        },
+
+        // Cold Grey Alpha
+        'cold-grey-alpha': {
+          5: '#606b7a0d',
+          10: '#606b7a1a',
+          20: '#606b7a33',
+          30: '#606b7a4d',
+          40: '#606b7a66',
+          50: '#606b7a80',
+          60: '#606b7a99',
+          70: '#606b7ab2',
+          80: '#606b7acc',
+          90: '#606b7ae5',
+          100: '#606b7a',
+        },
+
+        // Teal
+        'teal': {
+          100: '#f2fcfa',
+          200: '#eafbf7',
+          300: '#e2f8f4',
+          400: '#86e5d1',
+          500: '#47d7b9',
+          600: '#23cca9',
+          700: '#1cba9d',
+          800: '#0f9786',
+          900: '#078279',
+          1000: '#027671',
+          1100: '#094d3f',
+          1200: '#084135',
+          1300: '#07372c',
+          1400: '#063229',
+          1500: '#052e25',
+          1600: '#052b23',
+          1700: '#052720',
+          1800: '#04211b',
+          1900: '#041f19',
+          2000: '#031814',
+        },
+
+        // Teal Alpha
+        'teal-alpha': {
+          5: '#0276710d',
+          10: '#0276711a',
+          20: '#02767133',
+          30: '#0276714d',
+          40: '#02767166',
+          50: '#02767180',
+          60: '#02767199',
+          70: '#027671b2',
+          80: '#027671cc',
+          90: '#027671e5',
+          100: '#027671',
+        },
+
+        // Azure
+        'azure': {
+          100: '#f1fdfe',
+          200: '#e7fbfd',
+          300: '#def9fd',
+          400: '#63e5f4',
+          500: '#17d4eb',
+          600: '#14c8e1',
+          700: '#10b5d3',
+          800: '#0892b7',
+          900: '#047da7',
+          1000: '#01719d',
+          1100: '#014966',
+          1200: '#013d55',
+          1300: '#003449',
+          1400: '#003043',
+          1500: '#002b3c',
+          1600: '#00293a',
+          1700: '#002534',
+          1800: '#00202d',
+          1900: '#001e2a',
+          2000: '#001721',
+        },
+
+        // Azure Alpha
+        'azure-alpha': {
+          5: '#01719d0d',
+          10: '#01719d1a',
+          20: '#01719d33',
+          30: '#01719d4d',
+          40: '#01719d66',
+          50: '#01719d80',
+          60: '#01719d99',
+          70: '#01719db2',
+          80: '#01719dcc',
+          90: '#01719de5',
+          100: '#01719d',
+        },
+
+        // Indigo
+        'indigo': {
+          100: '#f4f8ff',
+          200: '#ecf3ff',
+          300: '#e3ecff',
+          400: '#c4d3ff',
+          500: '#aebfff',
+          600: '#a2b1ff',
+          700: '#929eff',
+          800: '#647aff',
+          900: '#4964fb',
+          1000: '#4258ed',
+          1100: '#3130ab',
+          1200: '#2b2695',
+          1300: '#261d84',
+          1400: '#23197b',
+          1500: '#201673',
+          1600: '#1f146f',
+          1700: '#1c1066',
+          1800: '#180c5b',
+          1900: '#160b56',
+          2000: '#110749',
+        },
+
+        // Indigo Alpha
+        'indigo-alpha': {
+          5: '#4258ed0d',
+          10: '#4258ed1a',
+          20: '#4258ed33',
+          30: '#4258ed4d',
+          40: '#4258ed66',
+          50: '#4258ed80',
+          60: '#4258ed99',
+          70: '#4258edb2',
+          80: '#4258edcc',
+          90: '#4258ede5',
+          100: '#4258ed',
+        },
+
+        // Violet
+        'violet': {
+          100: '#f8f5ff',
+          200: '#f4efff',
+          300: '#efe7ff',
+          400: '#decaff',
+          500: '#d0b3ff',
+          600: '#c9a5ff',
+          700: '#bc90ff',
+          800: '#a065fb',
+          900: '#8f50e8',
+          1000: '#8445db',
+          1100: '#59249b',
+          1200: '#4c1c86',
+          1300: '#411674',
+          1400: '#3c136c',
+          1500: '#371163',
+          1600: '#34105f',
+          1700: '#2f0d57',
+          1800: '#290a4d',
+          1900: '#260949',
+          2000: '#1f063c',
+        },
+
+        // Violet Alpha
+        'violet-alpha': {
+          5: '#8445db0d',
+          10: '#8445db1a',
+          20: '#8445db33',
+          30: '#8445db4d',
+          40: '#8445db66',
+          50: '#8445db80',
+          60: '#8445db99',
+          70: '#8445dbb2',
+          80: '#8445dbcc',
+          90: '#8445dbe5',
+          100: '#8445db',
+        },
+
+        // Black
+        'black': {
+          5: '#0000000d',
+          10: '#0000001a',
+          20: '#00000033',
+          30: '#0000004d',
+          40: '#00000066',
+          50: '#00000080',
+          60: '#00000099',
+          70: '#000000b2',
+          80: '#000000cc',
+          90: '#000000e5',
+          100: '#000000',
+        },
+
+        // White
+        'white': {
+          5: '#ffffff0d',
+          10: '#ffffff1a',
+          20: '#ffffff33',
+          30: '#ffffff4d',
+          40: '#ffffff66',
+          50: '#ffffff80',
+          60: '#ffffff99',
+          70: '#ffffffb2',
+          80: '#ffffffcc',
+          90: '#ffffffe5',
+          100: '#ffffff',
+        },
+
+        // Neutral
+        'neutral': {
+          1600: '#20242c',
+        },
+      },
+      
+      fontSize: {
+        '2xs': '10px',
+        'xs': '12px',
+        'sm': '14px',
+        'base': '16px',
+        'lg': '18px',
+        'xl': '20px',
+        '2xl': '22px',
+        '3xl': '24px',
+        '4xl': '28px',
+        '5xl': '32px',
+        '6xl': '36px',
+        '7xl': '40px',
+        '8xl': '46px',
+        '9xl': '52px',
+        '10xl': '58px',
+        '11xl': '66px',
+        '12xl': '74px',
+        // Aliases
+        'heading-1': '32px',
+        'heading-2': '28px',
+      },
+      
+      fontFamily: {
+        'primary': ['Inter', 'sans-serif'],
+        'secondary': ['Inter', 'sans-serif'],
+      },
+      
+      fontWeight: {
+        'medium': '500',
+        'bold': '700',
+        'medium-italic': '500',
+        'bold-italic': '700',
+      },
+      
+      lineHeight: {
+        'heading': '1.25',
+        'body': '1.5',
+        'tight': '1.2',
+        'relaxed': '1.6',
+      },
+      
+      letterSpacing: {
+        'heading-1': '-0.64px',
+      },
+      
+      spacing: {
+        '0': '0px',
+        '100': '4px',
+        '200': '8px',
+        '300': '12px',
+        '400': '16px',
+        '600': '24px',
+        '1000': '40px',
+        '1200': '48px',
+        '1600': '64px',
+        '2000': '80px',
+        '3000': '120px',
+      },
+      
+        borderRadius: {
+          'none': '0',
+          'small': '4px',
+          'base': '8px',
+          'medium': '8px',
+          'large': '16px',
+          'rounded': '1000px',
+        },
+      
+      borderWidth: {
+        'DEFAULT': '1px',
+        'base': '1px',
+        'medium': '2px',
+        'thick': '3px',
+      },
+      
+      borderColor: {
+        'neutral-base': '#606b7a',
+        'neutral-divider': 'rgba(0, 0, 0, 0.1)',
+        'brand-base': '#4258ed',
+        'positive-base': '#007b24',
+        'negative-base': '#d40d00',
+        'warning-base': '#a65200',
+        'info-base': '#006faa',
+      },
+      
+      boxShadow: {
+        // No shadow
+        'none': 'none',
+        
+        // Positive elevation (upward shadows)
+        'elevation-100': '0px 1px 2px 0px rgba(0, 0, 0, 0.08)',
+        'elevation-200': '0px 1px 2px 0px rgba(0, 0, 0, 0.04), 0px 1px 3px 0px rgba(0, 0, 0, 0.08)',
+        'elevation-300': '0px 4px 6px -1px rgba(0, 0, 0, 0.08), 0px 2px 4px -1px rgba(0, 0, 0, 0.06)',
+        'elevation-400': '0px 8px 12px -2px rgba(0, 0, 0, 0.08), 0px 2px 6px -2px rgba(0, 0, 0, 0.06)',
+        'elevation-500': '0px 16px 24px -4px rgba(0, 0, 0, 0.08), 0px 4px 8px -2px rgba(0, 0, 0, 0.04)',
+        'elevation-600': '0px 24px 40px -4px rgba(0, 0, 0, 0.08), 0px 6px 16px -2px rgba(0, 0, 0, 0.04)',
+        
+        // Negative elevation (downward shadows)
+        'elevation-n100': '0px -1px 2px 0px rgba(0, 0, 0, 0.08)',
+        'elevation-n200': '0px -1px 2px 0px rgba(0, 0, 0, 0.04), 0px -1px 3px 0px rgba(0, 0, 0, 0.08)',
+        'elevation-n300': '0px -4px 6px -1px rgba(0, 0, 0, 0.08), 0px -2px 4px -1px rgba(0, 0, 0, 0.06)',
+        'elevation-n400': '0px -8px 12px -2px rgba(0, 0, 0, 0.08), 0px -2px 6px -2px rgba(0, 0, 0, 0.06)',
+        'elevation-n500': '0px -4px 8px -2px rgba(0, 0, 0, 0.04), 0px -16px 24px -4px rgba(0, 0, 0, 0.08)',
+        'elevation-n600': '0px -6px 16px -2px rgba(0, 0, 0, 0.04), 0px -24px 40px -4px rgba(0, 0, 0, 0.08)',
+        
+        // Semantic aliases
+        'sm': '0px 1px 2px 0px rgba(0, 0, 0, 0.08)',
+        'md': '0px 1px 2px 0px rgba(0, 0, 0, 0.04), 0px 1px 3px 0px rgba(0, 0, 0, 0.08)',
+        'lg': '0px 4px 6px -1px rgba(0, 0, 0, 0.08), 0px 2px 4px -1px rgba(0, 0, 0, 0.06)',
+        'xl': '0px 8px 12px -2px rgba(0, 0, 0, 0.08), 0px 2px 6px -2px rgba(0, 0, 0, 0.06)',
+        '2xl': '0px 16px 24px -4px rgba(0, 0, 0, 0.08), 0px 4px 8px -2px rgba(0, 0, 0, 0.04)',
+        '3xl': '0px 24px 40px -4px rgba(0, 0, 0, 0.08), 0px 6px 16px -2px rgba(0, 0, 0, 0.04)',
+        
+        // Component-specific shadows
+        'card': '0px 1px 2px 0px rgba(0, 0, 0, 0.04), 0px 1px 3px 0px rgba(0, 0, 0, 0.08)',
+        'dropdown': '0px 4px 6px -1px rgba(0, 0, 0, 0.08), 0px 2px 4px -1px rgba(0, 0, 0, 0.06)',
+        'modal': '0px 8px 12px -2px rgba(0, 0, 0, 0.08), 0px 2px 6px -2px rgba(0, 0, 0, 0.06)',
+        'overlay': '0px 16px 24px -4px rgba(0, 0, 0, 0.08), 0px 4px 8px -2px rgba(0, 0, 0, 0.04)',
+        
+        // Focus rings
+        'focus': '0 0 0 3px rgba(66, 88, 237, 0.3)',
+        'focus-error': '0 0 0 3px rgba(212, 13, 0, 0.3)',
+        'focus-success': '0 0 0 3px rgba(0, 123, 36, 0.3)',
+        'focus-warning': '0 0 0 3px rgba(166, 82, 0, 0.3)',
+      },
+      
+      // Component-specific colors
+      backgroundColor: theme => ({
+        ...theme('colors'),
+        'button-primary': 'var(--button-primary-background-enabled)',
+        'button-primary-hover': 'var(--button-primary-background-hover)',
+        'button-subtle-hover': 'var(--button-subtle-background-hover)',
+        'banner-brand': 'var(--banner-background-brand)',
+        'banner-positive': 'var(--banner-background-positive)',
+        'banner-warning': 'var(--banner-background-warning)',
+        'banner-negative': 'var(--banner-background-negative)',
+        'field-default': 'var(--field-background-default)',
+        'field-hover': 'var(--field-background-hover)',
+        'field-disabled': 'var(--field-background-disabled)',
+      }),
+      
+      textColor: theme => ({
+        ...theme('colors'),
+        'button-primary': 'var(--button-primary-text-enabled)',
+        'button-outline': 'var(--button-outline-text-enabled)',
+        'button-subtle': 'var(--button-subtle-text-enabled)',
+        'link': 'var(--link-enabled)',
+        'link-hover': 'var(--link-hover)',
+      }),
+      
+      borderColor: theme => ({
+        ...theme('colors'),
+        'button-outline': 'var(--button-outline-border-enabled)',
+        'button-outline-hover': 'var(--button-outline-border-hover)',
+        'field': 'var(--border-color-neutral-base)',
+        'field-focus': 'var(--border-color-brand-base)',
+        'field-error': 'var(--border-color-negative-base)',
+      }),
+      
+      // Icon sizes
+      width: theme => ({
+        ...theme('spacing'),
+        'icon-xs': 'var(--icon-size-xs, 12px)',
+        'icon-sm': 'var(--icon-size-sm, 16px)',
+        'icon-md': 'var(--icon-size-md, 20px)',
+        'icon-lg': 'var(--icon-size-lg, 24px)',
+        'icon-xl': 'var(--icon-size-xl, 32px)',
+        'icon-2xl': 'var(--icon-size-2xl, 48px)',
+        'icon-3xl': 'var(--icon-size-3xl, 64px)',
+      }),
+      
+      height: theme => ({
+        ...theme('spacing'),
+        'icon-xs': 'var(--icon-size-xs, 12px)',
+        'icon-sm': 'var(--icon-size-sm, 16px)',
+        'icon-md': 'var(--icon-size-md, 20px)',
+        'icon-lg': 'var(--icon-size-lg, 24px)',
+        'icon-xl': 'var(--icon-size-xl, 32px)',
+        'icon-2xl': 'var(--icon-size-2xl, 48px)',
+        'icon-3xl': 'var(--icon-size-3xl, 64px)',
+      }),
+    },
+  },
+  plugins: [],
+}

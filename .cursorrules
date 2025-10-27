@@ -1,0 +1,27 @@
+# Figma MCP Server Configuration
+
+This project is configured to use the Figma MCP (Model Context Protocol) server.
+
+## Available Servers:
+1. **Local Figma MCP Server** (requires Figma Desktop app)
+   - URL: http://127.0.0.1:3845/mcp
+   - Enable in Figma: Dev Mode > Inspect panel > "Enable desktop MCP server"
+
+2. **Remote Figma MCP Server** (no desktop app required)
+   - URL: https://mcp.figma.com/mcp
+
+## Setup Instructions:
+1. In Cursor, press Ctrl+Shift+P
+2. Search for "MCP: Add Server"
+3. Select "HTTP"
+4. Enter the server URL (local or remote)
+5. Provide a server ID (e.g., "figma-mcp")
+6. Choose scope (global or workspace)
+
+## Features:
+- Query design files
+- Extract design tokens
+- Access component information
+- Retrieve styles and assets
+
+

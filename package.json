@@ -1,0 +1,45 @@
+{
+  "name": "dap-design-system",
+  "version": "1.2.0",
+  "description": "DÁP Design System UI Kit 1.2 - Design tokens és komponensek",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "design-system",
+    "design-tokens",
+    "figma",
+    "remixicon",
+    "css-variables",
+    "scss",
+    "tailwind"
+  ],
+  "author": "DÁP Design Team",
+  "license": "MIT",
+  "dependencies": {
+    "remixicon": "^3.5.0"
+  },
+  "devDependencies": {},
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "vue": ">=3.0.0"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    },
+    "vue": {
+      "optional": true
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-org/dap-design-system"
+  },
+  "bugs": {
+    "url": "https://github.com/your-org/dap-design-system/issues"
+  },
+  "homepage": "https://github.com/your-org/dap-design-system#readme"
+}
+
